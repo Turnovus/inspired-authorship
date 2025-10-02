@@ -1,0 +1,5 @@
+*.csproj.user
+*.idea/
+*.user
+*obj/
+*bin/
