@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <InspirationDef>
+        <defName>Turn_Inspired_Authorship</defName>
+        <label>inspired authorship</label>
+
+        <inspirationClass>InspiredAuthorship.Inspiration_Authorship</inspirationClass>
+        <workerClass>InspiredAuthorship.InspirationWorker_Authorship</workerClass>
+
+        <baseDurationDays>8</baseDurationDays>
+        <beginLetter>[PAWN_pronoun] will create a manuscript and begin working on it for the duration of the inspiration. Once the inspiration ends, the manuscript will be finalized into a completed book.\n\nThe quality of the finished book depends on the time spent writing it. [PAWN_nameDef] will spend [PAWN_possessive] spare time working on the book. Scheduling less "Work" time in the schedule tab will give [PAWN_objective] more time to write, increasing the resulting quality.\n\nIf the manuscript is destroyed before it can be completed, then the inspiration will end and the work will be lost.</beginLetter>
+        <beginLetterDef>PositiveEvent</beginLetterDef>
+        <endMessage>{0} is no longer inspired (inspired authorship)</endMessage>
+        <baseInspectLine>Inspired: Inspired authorship</baseInspectLine>
+        <minAge>16</minAge>
+        <associatedSkills>
+            <li>Intellectual</li>
+        </associatedSkills>
+    </InspirationDef>
+
+</Defs>
