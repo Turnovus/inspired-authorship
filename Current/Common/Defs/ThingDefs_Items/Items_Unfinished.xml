@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef>
+        <defName>Turn_Authorship_Manuscript</defName>
+        <label>manuscript</label>
+        <description>A collection of texts comprising an unfinished literary work.</description>
+
+        <thingClass>InspiredAuthorship.Thing_UnfinishedManuscript</thingClass>
+        <category>Item</category>
+
+        <graphicData>
+            <texPath>InspiredAuthorship/Things/Item/Unfinished/UnfinishedManuscript</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <altitudeLayer>Item</altitudeLayer>
+        <useHitPoints>true</useHitPoints>
+        <isUnfinishedThing>true</isUnfinishedThing>
+        <scatterableOnMapGen>false</scatterableOnMapGen>
+        <selectable>true</selectable>
+        <tradeability>None</tradeability>
+        <drawerType>MapMeshOnly</drawerType>
+
+        <alwaysHaulable>true</alwaysHaulable>
+        <rotatable>false</rotatable>
+        <pathCost>14</pathCost>
+
+        <thingCategories>
+            <li>Unfinished</li>
+        </thingCategories>
+
+        <statBases>
+            <MaxHitPoints>30</MaxHitPoints>
+            <DeteriorationRate>6</DeteriorationRate>
+            <Beauty>-2</Beauty>
+            <Mass>0.40</Mass>
+            <Flammability>1</Flammability>
+        </statBases>
+
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+        </comps>
+    </ThingDef>
+
+</Defs>
