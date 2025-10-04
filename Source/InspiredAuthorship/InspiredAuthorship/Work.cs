@@ -22,12 +22,7 @@ namespace InspiredAuthorship
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            TargetThingA = Inspiration.manuscript;
-
-            if (TargetThingA != null)
-                return pawn.Reserve(TargetThingA, job, errorOnFailed: errorOnFailed);
-
-            return true;
+            return pawn.Reserve(TargetThingA, job, errorOnFailed: errorOnFailed);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
