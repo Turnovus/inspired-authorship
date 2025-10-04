@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThinkTreeDef>
+        <defName>Turn_ThinkTree_Authorship</defName>
+        <insertTag>Humanlike_PostMain</insertTag>
+        <insertPriority>0</insertPriority>
+        <thinkRoot Class="InspiredAuthorship.ThinkNode_ConditionalInspiration">
+            <inspiration>Turn_Inspired_Authorship</inspiration>
+            <subNodes>
+                <li Class="InspiredAuthorship.JobGiver_Author">
+                    <writeJob>Turn_Job_WorkOnManuscript</writeJob>
+                </li>
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+
+</Defs>

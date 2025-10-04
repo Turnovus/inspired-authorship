@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <JobDef>
+        <defName>Turn_Job_WorkOnManuscript</defName>
+        <driverClass>InspiredAuthorship.JobDriver_Write</driverClass>
+        <reportString>Working on TargetA</reportString>
+        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    </JobDef>
+
+</Defs>

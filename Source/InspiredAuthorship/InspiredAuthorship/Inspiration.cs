@@ -12,6 +12,14 @@ namespace InspiredAuthorship
             base.ExposeData();
             Scribe_References.Look(ref manuscript, "manuscript");
         }
+
+        public Thing CreateManuscript()
+        {
+            Thing thing = ThingMaker.MakeThing(MyDefOf.Turn_Authorship_Manuscript);
+            manuscript = thing as Thing_UnfinishedManuscript;
+            manuscript.author = pawn;
+            return thing;
+        }
     }
 
     public class InspirationWorker_Authorship : InspirationWorker
