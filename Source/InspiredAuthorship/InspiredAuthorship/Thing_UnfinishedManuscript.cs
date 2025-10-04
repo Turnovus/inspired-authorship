@@ -27,12 +27,6 @@ namespace InspiredAuthorship
             base.ExposeData();
             Scribe_References.Look(ref author, "author");
             Scribe_Values.Look(ref ticksWorked, "ticksWorked");
-
-            if (author == null)
-            {
-                Log.Error("Scribed manuscript {0} with invalid author. Destroying.".Formatted(ToString()));
-                Destroy();
-            }
         }
     }
 }
