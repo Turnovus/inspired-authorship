@@ -12,7 +12,8 @@ namespace InspiredAuthorship
 
         public void Notify_InspirationEnded()
         {
-            
+            // TODO: Generate finished book
+            Destroy();
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
