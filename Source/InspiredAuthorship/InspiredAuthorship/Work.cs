@@ -158,6 +158,7 @@ namespace InspiredAuthorship
             {
                 if (manuscript == null)
                     pawn.jobs.curDriver.EndJobWith(JobCondition.Incompletable);
+                pawn.rotationTracker.FaceCell(TargetC.Cell);
             };
             toil.tickAction = () =>
             {
