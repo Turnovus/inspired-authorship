@@ -10,6 +10,19 @@ namespace InspiredAuthorship
 
         public void DoWork(int ticks) => ticksWorked += ticks;
 
+        public void Notify_InspirationEnded()
+        {
+            
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            Inspiration_Authorship inspiration = author?.Inspiration as Inspiration_Authorship;
+            inspiration?.Notify_ManuscriptDestroyed();
+            
+            base.Destroy(mode);
+        }
+
         public override string GetInspectString()
         {
             string s = base.GetInspectString();

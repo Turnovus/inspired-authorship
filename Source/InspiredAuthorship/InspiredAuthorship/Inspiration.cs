@@ -7,6 +7,19 @@ namespace InspiredAuthorship
     {
         public Thing_UnfinishedManuscript manuscript;
 
+        public void Notify_ManuscriptDestroyed()
+        {
+            manuscript = null;
+            // TODO: Notify player
+            End();
+        }
+
+        public override void PostEnd()
+        {
+            manuscript?.Notify_InspirationEnded();
+            base.PostEnd();
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
