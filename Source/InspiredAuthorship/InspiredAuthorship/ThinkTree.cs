@@ -4,16 +4,10 @@ using Verse.AI;
 
 namespace InspiredAuthorship
 {
-    public class ThinkNode_ConditionalInspiration : ThinkNode_Conditional
-    {
-        public InspirationDef inspiration;
-        
-        protected override bool Satisfied(Pawn pawn) => pawn.InspirationDef == inspiration;
-    }
-
     public class JobGiver_Author : ThinkNode_JobGiver
     {
-        public JobDef writeJob;
+        public override float GetPriority(Pawn pawn) =>
+            !(pawn.Inspiration is Inspiration_Authorship) ? 0.0f : 6.5f;
 
         protected override Job TryGiveJob(Pawn pawn)
         {
@@ -22,10 +16,10 @@ namespace InspiredAuthorship
                 return null;
 
             Thing manuscript = inspiration.manuscript;
-            if (manuscript != null && !pawn.CanReserve(manuscript))
-                return null;
+            if (manuscript != null)
+                return pawn.CanReserve(manuscript) ? JobMaker.MakeJob(MyDefOf.Turn_Job_WorkOnManuscript, manuscript, 1500, true) : null ;
             
-            return JobMaker.MakeJob(writeJob, manuscript, 1500, true);
+            return JobMaker.MakeJob(MyDefOf.Turn_Job_WorkOnManuscript, 1500, true);
         }
     }
 }
