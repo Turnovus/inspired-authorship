@@ -8,14 +8,6 @@ namespace InspiredAuthorship
 {
     public class Thing_UnfinishedManuscript : ThingWithComps
     {
-        public const float MaxQualityForScrapPossible = 0.6f;
-        public const float MaxWorkTimeContribution = 0.6f;
-        public const float OffsetPerSkillLevel = 0.015f;
-        public const float MaxSkillContribution = 0.6f;
-        public const float SkillCapFromWorkFactor = 2.5f;
-        public const float MaxLuckContribution = 0.5f;
-        public const float MaxQualityOffset = MaxWorkTimeContribution + MaxSkillContribution + MaxLuckContribution;
-        
         public Pawn author;
         public int ticksWorked = 0;
 
@@ -30,11 +22,14 @@ namespace InspiredAuthorship
         public float GetQualityPreProcessedNow(out float luck)
         {
             float fromWork = GetOffsetFromWork();
-            luck = Rand.Range(0f, MaxLuckContribution);
+            luck = Rand.Range(0f, MyDefOf.ModTuning.maxLuckContribution);
             return fromWork + GetOffsetFromSkills(fromWork) + luck;
         }
         
-        public float GetOffsetFromWork() => Mathf.Min(MaxWorkTimeContribution, ticksWorked / (10f * GenDate.TicksPerDay));
+        public float GetOffsetFromWork() =>
+            Mathf.Min(
+                MyDefOf.ModTuning.maxWorkTimeContribution,
+                ticksWorked / (MyDefOf.ModTuning.qualityTargetDays * GenDate.TicksPerDay));
 
         public float GetOffsetFromSkills(float workOffset)
         {
@@ -58,8 +53,8 @@ namespace InspiredAuthorship
             foreach (SkillRecord skill in bestSkills)
                 levels += skill.levelInt;
 
-            float preWorkCap = Mathf.Min(MaxSkillContribution, OffsetPerSkillLevel * levels);
-            return Mathf.Min(preWorkCap, workOffset * SkillCapFromWorkFactor);
+            float preWorkCap = Mathf.Min(MyDefOf.ModTuning.maxSkillContribution, MyDefOf.ModTuning.offsetPerSkillLevel * levels);
+            return Mathf.Min(preWorkCap, workOffset * MyDefOf.ModTuning.skillCapFromWorkFactor);
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)

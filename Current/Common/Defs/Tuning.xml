@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <InspiredAuthorship.ModTuningDef>
+        <defName>ModTuning</defName>
+
+        <!--Highest quality factor (% of max) for a book to be scrapped. Actual chance is linearly interpolated from 0 to this value. -->
+        <maxQualityForScrapPossible>0.60</maxQualityForScrapPossible>
+        <!-- How many days' worth of work is needed to receive a work quality offset of 1.0. -->
+        <qualityTargetDays>10.00</qualityTargetDays>
+        <!-- The maximum quality offset that can be gained from work. -->
+        <maxWorkTimeContribution>0.60</maxWorkTimeContribution>
+        <!-- The quality offset per each skill level, taken from the 3 highest skills. -->
+        <offsetPerSkillLevel>0.015</offsetPerSkillLevel>
+        <!-- The maximum quality offset that can be gained from skill. -->
+        <maxSkillContribution>0.60</maxSkillContribution>
+        <!-- A second cap is applied to skill contribution, equal to the product of this value and current work contribution. This prevents highly-skilled pawns from producing high-quality books without actually doing any work. A higher value makes the second cap easier to raise. -->
+        <skillCapFromWorkFactor>2.5</skillCapFromWorkFactor>
+        <!-- The upper limit of the random quality offset. -->
+        <maxLuckContribution>0.50</maxLuckContribution>
+    </InspiredAuthorship.ModTuningDef>
+
+</Defs>
