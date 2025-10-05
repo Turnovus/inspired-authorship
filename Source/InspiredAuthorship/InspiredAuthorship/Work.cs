@@ -14,9 +14,8 @@ namespace InspiredAuthorship
 
         public override string GetReport()
         {
-            // TODO: Localization
             if (TargetThingA == null)
-                return "Starting manuscript.";
+                return "InspiredAuthorship.Jobs.Write.MakingManuscript".Translate();
             return base.GetReport();
         }
 

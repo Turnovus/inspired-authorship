@@ -82,9 +82,9 @@ namespace InspiredAuthorship
             if (!s.NullOrEmpty())
                 s += "\n";
             
-            // TODO: Localization
-            s += "Author: {0}".Formatted(author.LabelShort);
-            s += "\nTime spent writing: {0}".Formatted(ticksWorked.ToStringTicksToPeriod(false));
+            s += "InspiredAuthorship.Inspect.Manuscript.Author".Translate(author.Named("PAWN"));
+            s += "\n";
+            s += "InspiredAuthorship.Inspect.Manuscript.Work".Translate(ticksWorked.ToStringTicksToPeriod(false));
             return s;
         }
 

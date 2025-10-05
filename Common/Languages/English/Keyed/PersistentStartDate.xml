@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <InspiredAuthorship.Inspect.Manuscript.Author>Author: {PAWN_labelShort}</InspiredAuthorship.Inspect.Manuscript.Author>
+    <InspiredAuthorship.Inspect.Manuscript.Work>Time spend writing: {0}</InspiredAuthorship.Inspect.Manuscript.Work>
+
+    <InspiredAuthorship.Jobs.Write.MakingManuscript>Starting manuscript.</InspiredAuthorship.Jobs.Write.MakingManuscript>
+
+</LanguageData>
