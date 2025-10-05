@@ -18,6 +18,79 @@
         <skillCapFromWorkFactor>2.5</skillCapFromWorkFactor>
         <!-- The upper limit of the random quality offset. -->
         <maxLuckContribution>0.50</maxLuckContribution>
+
+        <!-- The random selection weight of each quality. The x value represents the quality factor from work, skill, and luck (% of maximum), and the y value represents the weight of that quality category for that quality factor. -->
+        <qualitySelectionCurves>
+            <li>
+                <key>Awful</key>
+                <value>
+                    <points>
+                        <li>(0.00, 10)</li>
+                        <li>(0.10, 1.00)</li>
+                        <li>(1.00, 0.001)</li>
+                    </points>
+                </value>
+            </li>
+            <li>
+                <key>Poor</key>
+                <value>
+                    <points>
+                        <li>(0.00, 2.00)</li>
+                        <li>(1.00, 0.02)</li>
+                    </points>
+                </value>
+            </li>
+            <li>
+                <key>Normal</key>
+                <value>
+                    <points>
+                        <li>(0.00, 0.25)</li>
+                        <li>(0.50, 1.00)</li>
+                        <li>(1.00, 0.25)</li>
+                    </points>
+                </value>
+            </li>
+            <li>
+                <key>Good</key>
+                <value>
+                    <points>
+                        <li>(0.00, 0.00)</li>
+                        <li>(0.10, 0.05)</li>
+                        <li>(1.00, 2.00)</li>
+                    </points>
+                </value>
+            </li>
+            <li>
+                <key>Excellent</key>
+                <value>
+                    <points>
+                        <li>(0.00, 0.00)</li>
+                        <li>(0.20, 0.00)</li>
+                        <li>(1.00, 1.50)</li>
+                    </points>
+                </value>
+            </li>
+            <li>
+                <key>Masterwork</key>
+                <value>
+                    <points>
+                        <li>(0.00, 0.00)</li>
+                        <li>(0.50, 0.00)</li>
+                        <li>(1.00, 0.75)</li>
+                    </points>
+                </value>
+            </li>
+            <li>
+                <key>Legendary</key>
+                <value>
+                    <points>
+                        <li>(0.00, 0.00)</li>
+                        <li>(0.70, 0.00)</li>
+                        <li>(1.00, 0.35)</li>
+                    </points>
+                </value>
+            </li>
+        </qualitySelectionCurves>
     </InspiredAuthorship.ModTuningDef>
 
 </Defs>

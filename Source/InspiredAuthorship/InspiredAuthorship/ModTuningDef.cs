@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using RimWorld;
 using Verse;
 
 namespace InspiredAuthorship
@@ -21,6 +23,10 @@ namespace InspiredAuthorship
         public float skillCapFromWorkFactor;
         // The upper limit of the random quality offset.
         public float maxLuckContribution;
+        
+        // The random selection weight of each quality. The x value represents the quality factor from work, skill, and
+        // luck (% of maximum), and the y value represents the weight of that quality category for that quality factor.
+        public Dictionary<QualityCategory, SimpleCurve> qualitySelectionCurves;
 
         public float MaxQualityOffset => maxWorkTimeContribution + maxSkillContribution + maxLuckContribution;
     }

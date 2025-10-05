@@ -57,6 +57,17 @@ namespace InspiredAuthorship
             return Mathf.Min(preWorkCap, workOffset * MyDefOf.ModTuning.skillCapFromWorkFactor);
         }
 
+        public QualityCategory GetQualityNow(out float preprocessed)
+        {
+            preprocessed = GetQualityPreProcessedNow(out _);
+            float qualityPercent = preprocessed / MyDefOf.ModTuning.MaxQualityOffset;
+            return MyDefOf.ModTuning.qualitySelectionCurves.Keys.RandomElementByWeight(k =>
+            {
+                SimpleCurve weightByQuality = MyDefOf.ModTuning.qualitySelectionCurves[k];
+                return weightByQuality.Evaluate(qualityPercent);
+            });
+        }
+
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             Inspiration_Authorship inspiration = author?.Inspiration as Inspiration_Authorship;
@@ -109,6 +120,22 @@ namespace InspiredAuthorship
                         GetOffsetFromSkills(1000f).ToStringDecimalIfSmall(),
                         luck.ToStringDecimalIfSmall()
                         ));
+                    Log.TryOpenLogWindow();
+                },
+            };
+
+            yield return new Command_Action()
+            {
+                defaultLabel = "DEV: Test quality outcome",
+                action = delegate
+                {
+                    float qualityPreprocessed;
+                    QualityCategory quality = GetQualityNow(out qualityPreprocessed);
+                    Log.Message("Got quality {0} from factor {1}.".Formatted(
+                        quality.ToString(),
+                        qualityPreprocessed.ToStringDecimalIfSmall()
+                        ));
+                    Log.TryOpenLogWindow();
                 },
             };
         }
