@@ -6,4 +6,9 @@
 
     <InspiredAuthorship.Jobs.Write.MakingManuscript>Starting manuscript.</InspiredAuthorship.Jobs.Write.MakingManuscript>
 
+    <InspiredAuthorship.Letters.ManuscriptDestroyed.Label>{PAWN_nameDef}'s manuscript destroyed</InspiredAuthorship.Letters.ManuscriptDestroyed.Label>
+    <InspiredAuthorship.Letters.ManuscriptDestroyed.NoAuthor.Label>Manuscript destroyed</InspiredAuthorship.Letters.ManuscriptDestroyed.NoAuthor.Label>
+    <InspiredAuthorship.Letters.ManuscriptDestroyed.Content>{PAWN_nameDef}'s manuscript has been lost or destroyed. Now {PAWN_pronoun} will no longer be able to finish {PAWN_possessive} work.</InspiredAuthorship.Letters.ManuscriptDestroyed.Content>
+    <InspiredAuthorship.Letters.ManuscriptDestroyed.NoAuthor.Content>A manuscript has been lost or destroyed. Now the author will no longer be able to finish their work.</InspiredAuthorship.Letters.ManuscriptDestroyed.NoAuthor.Content>
+
 </LanguageData>

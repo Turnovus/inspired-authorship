@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
@@ -10,14 +11,11 @@ namespace InspiredAuthorship
     {
         public Pawn author;
         public int ticksWorked = 0;
+        private bool completed = false;
 
         public void DoWork(int ticks) => ticksWorked += ticks;
 
-        public void Notify_InspirationEnded()
-        {
-            // TODO: Generate finished book
-            Destroy();
-        }
+        public void Notify_InspirationEnded() => CompleteBook();
 
         public float GetQualityPreProcessedNow(out float luck)
         {
@@ -73,7 +71,64 @@ namespace InspiredAuthorship
             Inspiration_Authorship inspiration = author?.Inspiration as Inspiration_Authorship;
             inspiration?.Notify_ManuscriptDestroyed();
             
+            if (!completed)
+                SendDestroyedMessage();
+            
             base.Destroy(mode);
+        }
+
+        public void CompleteBook()
+        {
+            completed = true;
+            // TODO: Generate book
+            Destroy();
+        }
+
+        public void SendDestroyedMessage()
+        {
+            string label;
+            string content;
+            if (author != null)
+            {
+                label = "InspiredAuthorship.Letters.ManuscriptDestroyed.Label".Translate(author.Named("PAWN"));
+                content = "InspiredAuthorship.Letters.ManuscriptDestroyed.Content".Translate(author.Named("PAWN"));
+            }
+            else
+            {
+                label = "InspiredAuthorship.Letters.ManuscriptDestroyed.NoAuthor.Label".Translate();
+                content = "InspiredAuthorship.Letters.ManuscriptDestroyed.NoAuthor.Content".Translate();
+            }
+
+            Letter letter = LetterMaker.MakeLetter(label, content, LetterDefOf.NegativeEvent);
+            
+            letter.lookTargets = new LookTargets();
+            if (MapHeld != null)
+                letter.lookTargets.targets.Add(new GlobalTargetInfo(PositionHeld, MapHeld));
+            if (author != null)
+                letter.lookTargets.targets.Add(author);
+            
+            Find.LetterStack.ReceiveLetter(letter);
+        }
+
+        public override void Notify_LeftBehind()
+        {
+            base.Notify_LeftBehind();
+            if (!Destroyed)
+                Destroy();
+        }
+
+        public override void Notify_AbandonedAtTile(PlanetTile tile)
+        {
+            base.Notify_AbandonedAtTile(tile);
+            if (!Destroyed)
+                Destroy();
+        }
+
+        public override void Notify_MyMapRemoved()
+        {
+            base.Notify_MyMapRemoved();
+            if (!Destroyed)
+                Destroy();
         }
 
         public override string GetInspectString()
@@ -145,6 +200,7 @@ namespace InspiredAuthorship
             base.ExposeData();
             Scribe_References.Look(ref author, "author");
             Scribe_Values.Look(ref ticksWorked, "ticksWorked");
+            Scribe_Values.Look(ref completed, "completed");
         }
     }
 }
