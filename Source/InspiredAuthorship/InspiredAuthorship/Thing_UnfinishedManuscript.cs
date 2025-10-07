@@ -17,55 +17,6 @@ namespace InspiredAuthorship
 
         public void Notify_InspirationEnded() => CompleteBook();
 
-        public float GetQualityPreProcessedNow(out float luck)
-        {
-            float fromWork = GetOffsetFromWork();
-            luck = Rand.Range(0f, MyDefOf.ModTuning.maxLuckContribution);
-            return fromWork + GetOffsetFromSkills(fromWork) + luck;
-        }
-        
-        public float GetOffsetFromWork() =>
-            Mathf.Min(
-                MyDefOf.ModTuning.maxWorkTimeContribution,
-                ticksWorked / (MyDefOf.ModTuning.qualityTargetDays * GenDate.TicksPerDay));
-
-        public float GetOffsetFromSkills(float workOffset)
-        {
-            List<SkillRecord> bestSkills = new List<SkillRecord>();
-            for (int i = 0; i < 3; i++)
-            {
-                SkillRecord highestSkill = null;
-                foreach (SkillRecord skill in author.skills.skills)
-                {
-                    if (!bestSkills.Contains(skill) && !skill.TotallyDisabled && (highestSkill == null || highestSkill.levelInt < skill.levelInt))
-                        highestSkill = skill;
-                }
-
-                if (highestSkill != null)
-                    bestSkills.Add(highestSkill);
-                else
-                    break;
-            }
-
-            int levels = 0;
-            foreach (SkillRecord skill in bestSkills)
-                levels += skill.levelInt;
-
-            float preWorkCap = Mathf.Min(MyDefOf.ModTuning.maxSkillContribution, MyDefOf.ModTuning.offsetPerSkillLevel * levels);
-            return Mathf.Min(preWorkCap, workOffset * MyDefOf.ModTuning.skillCapFromWorkFactor);
-        }
-
-        public QualityCategory GetQualityNow(out float preprocessed)
-        {
-            preprocessed = GetQualityPreProcessedNow(out _);
-            float qualityPercent = preprocessed / MyDefOf.ModTuning.MaxQualityOffset;
-            return MyDefOf.ModTuning.qualitySelectionCurves.Keys.RandomElementByWeight(k =>
-            {
-                SimpleCurve weightByQuality = MyDefOf.ModTuning.qualitySelectionCurves[k];
-                return weightByQuality.Evaluate(qualityPercent);
-            });
-        }
-
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             Inspiration_Authorship inspiration = author?.Inspiration as Inspiration_Authorship;
@@ -167,15 +118,7 @@ namespace InspiredAuthorship
                 defaultLabel = "DEV: Log quality",
                 action = delegate
                 {
-                    float fromWork = GetOffsetFromWork();
-                    Log.Message("Overall: {0}. From work: {1}. From skill: {2}/{3}. From luck: {4}.".Formatted(
-                        GetQualityPreProcessedNow(out float luck).ToStringDecimalIfSmall(),
-                        fromWork.ToStringDecimalIfSmall(),
-                        GetOffsetFromSkills(fromWork).ToStringDecimalIfSmall(),
-                        GetOffsetFromSkills(1000f).ToStringDecimalIfSmall(),
-                        luck.ToStringDecimalIfSmall()
-                        ));
-                    Log.TryOpenLogWindow();
+                    BookGenerator.LogQuality(author, ticksWorked);
                 },
             };
 
@@ -185,7 +128,7 @@ namespace InspiredAuthorship
                 action = delegate
                 {
                     float qualityPreprocessed;
-                    QualityCategory quality = GetQualityNow(out qualityPreprocessed);
+                    QualityCategory quality = BookGenerator.GetQualityNow(author, ticksWorked, out qualityPreprocessed);
                     Log.Message("Got quality {0} from factor {1}.".Formatted(
                         quality.ToString(),
                         qualityPreprocessed.ToStringDecimalIfSmall()
