@@ -7,6 +7,10 @@ namespace InspiredAuthorship
 {
     public static class BookGenerator
     {
+        private static bool generatingBook = false;
+        
+        public static bool IsGeneratingBookNow => generatingBook;
+        
         public static float GetQualityPreProcessedNow(Pawn author, int ticksWorked, out float luck)
         {
             float fromWork = GetOffsetFromWork(ticksWorked);
@@ -54,6 +58,28 @@ namespace InspiredAuthorship
                 SimpleCurve weightByQuality = MyDefOf.ModTuning.qualitySelectionCurves[k];
                 return weightByQuality.Evaluate(qualityPercent);
             });
+        }
+
+        public static Thing GenerateBook(Pawn author, QualityCategory quality)
+        {
+            generatingBook = true;
+            try
+            {
+                return GenerateBookInternal(author, quality);
+            }
+            finally
+            {
+                generatingBook = false;
+            }
+        }
+
+        private static Thing GenerateBookInternal(Pawn author, QualityCategory quality)
+        {
+            ThingDef bookDef = MyDefOf.ModTuning.bookDefs.RandomElement();
+            Thing book = ThingMaker.MakeThing(bookDef);
+            book.TryGetComp<CompQuality>().SetQuality(quality, ArtGenerationContext.Colony);
+            // TODO: Generate book details
+            return book;
         }
 
         public static void LogQuality(Pawn author, int ticksWorked)

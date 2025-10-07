@@ -7,7 +7,7 @@ namespace InspiredAuthorship
     {
         public Thing_UnfinishedManuscript manuscript;
 
-        public void Notify_ManuscriptDestroyed()
+        public void Notify_ManuscriptDestroyed(bool completed)
         {
             manuscript = null;
             // TODO: Notify player

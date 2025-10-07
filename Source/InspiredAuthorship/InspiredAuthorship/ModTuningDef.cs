@@ -28,6 +28,8 @@ namespace InspiredAuthorship
         // luck (% of maximum), and the y value represents the weight of that quality category for that quality factor.
         public Dictionary<QualityCategory, SimpleCurve> qualitySelectionCurves;
 
+        public List<ThingDef> bookDefs = new List<ThingDef>();
+
         public float MaxQualityOffset => maxWorkTimeContribution + maxSkillContribution + maxLuckContribution;
     }
 }

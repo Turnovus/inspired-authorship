@@ -20,7 +20,7 @@ namespace InspiredAuthorship
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             Inspiration_Authorship inspiration = author?.Inspiration as Inspiration_Authorship;
-            inspiration?.Notify_ManuscriptDestroyed();
+            inspiration?.Notify_ManuscriptDestroyed(completed);
             
             if (!completed)
                 SendDestroyedMessage();
@@ -31,8 +31,19 @@ namespace InspiredAuthorship
         public void CompleteBook()
         {
             completed = true;
-            // TODO: Generate book
+
+            // TODO: Book scrapping
+            GenerateAndPlaceBook();
+            
             Destroy();
+        }
+
+        public void GenerateAndPlaceBook()
+        {
+            QualityCategory quality = BookGenerator.GetQualityNow(author, ticksWorked, out _);
+            Thing book = BookGenerator.GenerateBook(author, quality);
+            GenPlace.TryPlaceThing(book, PositionHeld, MapHeld, ThingPlaceMode.Near);
+            // TODO: Generate letter
         }
 
         public void SendDestroyedMessage()
@@ -135,6 +146,12 @@ namespace InspiredAuthorship
                         ));
                     Log.TryOpenLogWindow();
                 },
+            };
+
+            yield return new Command_Action()
+            {
+                defaultLabel = "DEV: Finish now",
+                action = CompleteBook,
             };
         }
 

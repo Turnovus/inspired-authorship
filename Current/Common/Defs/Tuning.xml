@@ -91,6 +91,10 @@
                 </value>
             </li>
         </qualitySelectionCurves>
+
+        <bookDefs>
+            <li>Turn_Authorship_Memoir</li>
+        </bookDefs>
     </InspiredAuthorship.ModTuningDef>
 
 </Defs>

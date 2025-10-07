@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+    <ThingDef ParentName="BookBase">
+        <defName>Turn_Authorship_Memoir</defName>
+        <thingClass>InspiredAuthorship.CustomBook</thingClass>
+        <label>memoir</label>
+        <description>A book containing true stories from a rimworld, collected for the pleasure and edification of the reader.</description>
+
+        <graphicData>
+            <texPath>Things/Item/Book/Novel/Novel</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.8</drawSize>
+        </graphicData>
+        <uiIconPath>Things/Item/Book/Novel/Novel</uiIconPath>
+
+        <statBases>
+            <MarketValue>160</MarketValue>
+        </statBases>
+
+        <comps>
+            <li Class="CompProperties_Book">
+                <!-- TODO: try removing these -->
+                <nameMaker>Namer_Novel</nameMaker>
+                <descriptionMaker>Description_Novel</descriptionMaker>
+
+                <ageYearsRange>0</ageYearsRange>
+
+                <openGraphic>
+                    <texPath>Things/Item/Book/Novel/Novel_Open</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <drawSize>0.7</drawSize>
+                </openGraphic>
+                <verticalGraphic>
+                    <texPath>Things/Item/Book/Novel/Novel_Vertical</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <addTopAltitudeBias>true</addTopAltitudeBias>
+                </verticalGraphic>
+
+                <doers>
+                    <li Class="BookOutcomeProperties_JoyFactorModifier" />
+                </doers>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>
