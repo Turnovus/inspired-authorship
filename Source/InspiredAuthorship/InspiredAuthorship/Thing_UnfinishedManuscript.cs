@@ -31,18 +31,32 @@ namespace InspiredAuthorship
         public void CompleteBook()
         {
             completed = true;
-
-            // TODO: Book scrapping
-            GenerateAndPlaceBook();
             
-            Destroy();
+            QualityCategory quality = BookGenerator.GetQualityNow(author, ticksWorked, out float qualityPreprocessed);
+            
+            float scrapChance = MyDefOf.ModTuning.maxQualityForScrapPossible - qualityPreprocessed;
+            scrapChance = Mathf.Max(0f, scrapChance / MyDefOf.ModTuning.maxQualityForScrapPossible);
+            if (Rand.Chance(scrapChance))
+                ScrapBook();
+            else
+                GenerateAndPlaceBook(quality);
         }
 
-        public void GenerateAndPlaceBook()
+        public void ScrapBook()
         {
-            QualityCategory quality = BookGenerator.GetQualityNow(author, ticksWorked, out _);
+            // TODO: Generate letter
+            Destroy();
+        }
+        
+        public void GenerateAndPlaceBook(QualityCategory quality)
+        {
             Thing book = BookGenerator.GenerateBook(author, quality);
-            GenPlace.TryPlaceThing(book, PositionHeld, MapHeld, ThingPlaceMode.Near);
+
+            IntVec3 position = PositionHeld;
+            Map map = MapHeld;
+            Destroy();
+            
+            GenPlace.TryPlaceThing(book, position, map, ThingPlaceMode.Near);
             // TODO: Generate letter
         }
 
