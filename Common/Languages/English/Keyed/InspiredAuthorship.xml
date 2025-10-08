@@ -11,4 +11,12 @@
     <InspiredAuthorship.Letters.ManuscriptDestroyed.Content>{PAWN_nameDef}'s manuscript has been lost or destroyed. Now {PAWN_pronoun} will no longer be able to finish {PAWN_possessive} work.</InspiredAuthorship.Letters.ManuscriptDestroyed.Content>
     <InspiredAuthorship.Letters.ManuscriptDestroyed.NoAuthor.Content>A manuscript has been lost or destroyed. Now the author will no longer be able to finish their work.</InspiredAuthorship.Letters.ManuscriptDestroyed.NoAuthor.Content>
 
+    <InspiredAuthorship.Letters.BookScrapped.Label>Book scrapped</InspiredAuthorship.Letters.BookScrapped.Label>
+    <InspiredAuthorship.Letters.BookScrapped.Content>{PAWN_nameDef} has lost the inspiration for {PAWN_possessive} book. {PAWN_pronoun} is deeply unsatisfied with the amount of work that his gone into {PAWN_possessive} manuscript, and has chosen to scrap the project entirely.</InspiredAuthorship.Letters.BookScrapped.Content>
+    <InspiredAuthorship.Letters.BookScrapped.Content.NoAuthor>Lacking sufficient content to constitute a finished book, a manuscript has been scrapped.</InspiredAuthorship.Letters.BookScrapped.Content.NoAuthor>
+
+    <InspiredAuthorship.Letters.BookFinished.Label>Book complete ({0})</InspiredAuthorship.Letters.BookFinished.Label>
+    <InspiredAuthorship.Letters.BookFinished.Content>{PAWN_nameDef} has finished working on {PAWN_possessive} manuscript, and has bound the final draft into a book.</InspiredAuthorship.Letters.BookFinished.Content>
+    <InspiredAuthorship.Letters.BookFinished.Content.NoAuthor>A manuscript has been finalized and bound into a book.</InspiredAuthorship.Letters.BookFinished.Content.NoAuthor>
+
 </LanguageData>

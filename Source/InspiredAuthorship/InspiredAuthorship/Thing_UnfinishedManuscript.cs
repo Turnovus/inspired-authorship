@@ -44,7 +44,7 @@ namespace InspiredAuthorship
 
         public void ScrapBook()
         {
-            // TODO: Generate letter
+            SendScrappedMessage(PositionHeld, MapHeld);
             Destroy();
         }
         
@@ -57,7 +57,39 @@ namespace InspiredAuthorship
             Destroy();
             
             GenPlace.TryPlaceThing(book, position, map, ThingPlaceMode.Near);
-            // TODO: Generate letter
+            SendCompletedMessage(book, quality);
+        }
+
+        public void SendScrappedMessage(IntVec3 position, Map map)
+        {
+            string label = "InspiredAuthorship.Letters.BookScrapped.Label".Translate();
+            string content = author != null
+                ? "InspiredAuthorship.Letters.BookScrapped.Content".Translate(author.Named("PAWN"))
+                : "InspiredAuthorship.Letters.BookScrapped.Content.NoAuthor".Translate();
+
+            Letter letter = LetterMaker.MakeLetter(label, content, LetterDefOf.NegativeEvent);
+
+            letter.lookTargets = new LookTargets();
+            if (map != null)
+                letter.lookTargets.targets.Add(new GlobalTargetInfo(position, map));
+            
+            Find.LetterStack.ReceiveLetter(letter);
+        }
+
+        public void SendCompletedMessage(Thing book, QualityCategory quality)
+        {
+            string label = "InspiredAuthorship.Letters.BookFinished.Label".Translate(quality.GetLabel());
+            string content = author != null
+                ? "InspiredAuthorship.Letters.BookFinished.Content".Translate(author.Named("PAWN"))
+                : "InspiredAuthorship.Letters.BookFinished.Content.NoAuthor".Translate();
+
+            Letter letter = LetterMaker.MakeLetter(label, content, LetterDefOf.PositiveEvent);
+
+            letter.lookTargets = new LookTargets();
+            if (book != null)
+                letter.lookTargets.targets.Add(book);
+            
+            Find.LetterStack.ReceiveLetter(letter);
         }
 
         public void SendDestroyedMessage()
