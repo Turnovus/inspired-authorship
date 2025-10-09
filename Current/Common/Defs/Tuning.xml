@@ -97,6 +97,13 @@
         </bookDefs>
 
         <writtenBookNamer>Turn_Authorship_WrittenBookNamer</writtenBookNamer>
+
+        <passageStartRules>Turn_Authorship_PassageStart</passageStartRules>
+        <passageMiddleRules>Turn_Authorship_PassageMiddle</passageMiddleRules>
+        <passageEndRules>Turn_Authorship_PassageEnd</passageEndRules>
+
+        <maxPassageCount>6</maxPassageCount>
+        <idealMinPassageCount>2</idealMinPassageCount>
     </InspiredAuthorship.ModTuningDef>
 
 </Defs>

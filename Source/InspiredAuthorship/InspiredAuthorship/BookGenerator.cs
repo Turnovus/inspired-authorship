@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using InspiredAuthorship.Passages;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -87,7 +89,7 @@ namespace InspiredAuthorship
             
             book.TryGetComp<CompQuality>().SetQuality(quality, ArtGenerationContext.Colony);
             book.ForceSetTitle(GenerateBookTitle(author));
-            // TODO: Generate book details
+            book.ForceSetDescription(GenerateBookDescription(author));
             
             return book;
         }
@@ -107,6 +109,44 @@ namespace InspiredAuthorship
             }
             request.Includes.Add(MyDefOf.ModTuning.writtenBookNamer);
             return GenText.CapitalizeAsTitle(GrammarResolver.Resolve("title", request)).StripTags();
+        }
+
+        public static string GenerateBookDescription(Pawn author)
+        {
+            string description = "";
+            int maxPassages = PassageGenerator.MaxPassagesPossibleFor(author);
+
+            if (maxPassages == 0)
+            {
+                description = "ERR";
+            }
+            else
+            {
+                maxPassages = Math.Min(maxPassages, MyDefOf.ModTuning.maxPassageCount);
+                int minPassages = Math.Min(maxPassages, MyDefOf.ModTuning.idealMinPassageCount);
+                List<PassageDef> usedPassages = new List<PassageDef>();
+                for (int i = 0; i < maxPassages; i++)
+                {
+                    GrammarRequest request = PassageGenerator.GetRandomGrammarFor(author, usedPassages, out PassageDef passage);
+                    usedPassages.Add(passage);
+
+                    RulePackDef rulePackDef;
+                    if (i == 0)
+                        rulePackDef = MyDefOf.ModTuning.passageStartRules;
+                    else if (i == maxPassages - 1)
+                        rulePackDef = MyDefOf.ModTuning.passageEndRules;
+                    else
+                        rulePackDef = MyDefOf.ModTuning.passageMiddleRules;
+                    
+                    request.Includes.Add(rulePackDef);
+                    description += GrammarResolver.Resolve("passage", request);
+
+                    if (i < maxPassages - 1)
+                        description += "\n\n";
+                }
+            }
+            
+            return description.StripTags();
         }
 
         public static IEnumerable<Rule> RulesForLocation(string prefix, Pawn pawn)

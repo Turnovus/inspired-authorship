@@ -214,6 +214,16 @@ namespace InspiredAuthorship
                     Log.TryOpenLogWindow();
                 },
             };
+
+            yield return new Command_Action()
+            {
+                defaultLabel = "DEV: Test description",
+                action = delegate
+                {
+                    Log.Message(BookGenerator.GenerateBookDescription(author));
+                    Log.TryOpenLogWindow();
+                },
+            };
         }
 
         public override void ExposeData()

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InspiredAuthorship", "InspiredAuthorship\InspiredAuthorship.csproj", "{33F24B07-AAB5-44F6-A5BF-BB767B8AD041}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InspiredAuthorship.Passages", "..\Passages\InspiredAuthorship.Passages\InspiredAuthorship.Passages.csproj", "{60CA7828-E5D2-4710-90E7-194120865704}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{33F24B07-AAB5-44F6-A5BF-BB767B8AD041}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33F24B07-AAB5-44F6-A5BF-BB767B8AD041}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33F24B07-AAB5-44F6-A5BF-BB767B8AD041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60CA7828-E5D2-4710-90E7-194120865704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60CA7828-E5D2-4710-90E7-194120865704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60CA7828-E5D2-4710-90E7-194120865704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60CA7828-E5D2-4710-90E7-194120865704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

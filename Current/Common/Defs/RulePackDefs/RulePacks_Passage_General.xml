@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RulePackDef>
+        <defName>Turn_Authorship_PassageStart</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>passage->[AUTHOR_nameDef] opens with [topic], explaining [detail].</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>Turn_Authorship_PassageMiddle</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>passage->[AUTHOR_nameDef] moves on to [topic], explaining [detail].</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>Turn_Authorship_PassageEnd</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>passage->[AUTHOR_nameDef] closes with [topic], explaining [detail].</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+
+</Defs>

@@ -32,6 +32,13 @@ namespace InspiredAuthorship
 
         public RulePackDef writtenBookNamer;
 
+        public RulePackDef passageStartRules;
+        public RulePackDef passageMiddleRules;
+        public RulePackDef passageEndRules;
+
+        public int maxPassageCount;
+        public int idealMinPassageCount;
+
         public float MaxQualityOffset => maxWorkTimeContribution + maxSkillContribution + maxLuckContribution;
     }
 }

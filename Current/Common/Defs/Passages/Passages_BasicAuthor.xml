@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Author's backstory -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>AuthorBackstory</defName>
+        <workerClass>InspiredAuthorship.Passages.PassageWorker_AuthorBackstory</workerClass>
+        <rules>
+            <rulesStrings>
+                <li>topic->[AUTHOR_possessive] past</li>
+                <li>topic->[AUTHOR_possessive] backstory</li>
+                <li>topic->[AUTHOR_possessive] personal history</li>
+
+                <li>detail->[AUTHOR_possessive] childhood as a [AUTHOR_childhood]</li>
+                <li>detail->[AUTHOR_possessive] time as a [AUTHOR_adulthood]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+</Defs>

@@ -36,4 +36,8 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Passages\InspiredAuthorship.Passages\InspiredAuthorship.Passages.csproj" />
+    </ItemGroup>
+
 </Project>
