@@ -30,6 +30,8 @@ namespace InspiredAuthorship
 
         public List<ThingDef> bookDefs = new List<ThingDef>();
 
+        public RulePackDef writtenBookNamer;
+
         public float MaxQualityOffset => maxWorkTimeContribution + maxSkillContribution + maxLuckContribution;
     }
 }

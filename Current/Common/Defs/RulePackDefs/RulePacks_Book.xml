@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RulePackDef>
+        <defName>Turn_Authorship_RulePackUtility</defName>
+        <rulePack>
+            <rulesFiles>
+                <li>concept_positive->Words/Nouns/Concepts_Positive</li>
+                <li>concept_angsty->Words/Nouns/Concepts_Angsty</li>
+                <li>concept_badass->Words/Nouns/Concepts_Badass</li>
+
+                <li>relative->Words/Nouns/People_Family</li>
+                <li>terrain_feature->Words/Nouns/TerrainFeatures</li>
+
+                <li>quest->Words/Nouns/Quests</li>
+
+                <li>adjective_angsty->Words/Adjectives/Angsty</li>
+                <li>adjective_badass->Words/Adjectives/Badass</li>
+                <li>adjective_curious->Words/Adjectives/Curious</li>
+                <li>adjective_friendly->Words/Adjectives/Friendly</li>
+                <li>adjective_large->Words/Adjectives/Large</li>
+                <li>adjective_natural->Words/Adjectives/Natural</li>
+            </rulesFiles>
+
+            <rulesStrings>
+                <li>concept_any->[concept_positive]</li>
+                <li>concept_any->[concept_angsty]</li>
+                <li>concept_any->[concept_badass]</li>
+
+                <li>noun_any->[concept_any]</li>
+                <li>noun_any->[relative]</li>
+                <li>noun_any->[terrain_feature]</li>
+                <li>noun_any->[quest]</li>
+
+                <li>adjective_any->[adjective_angsty]</li>
+                <li>adjective_any->[adjective_badass]</li>
+                <li>adjective_any->[adjective_curious]</li>
+                <li>adjective_any->[adjective_friendly]</li>
+                <li>adjective_any->[adjective_large]</li>
+                <li>adjective_any->[adjective_natural]</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>Turn_Authorship_WrittenBookNamer</defName>
+
+        <include>
+            <li>Turn_Authorship_RulePackUtility</li>
+        </include>
+
+        <rulePack>
+            <rulesFiles>
+                <li>stories->Words/Nouns/Stories</li>
+            </rulesFiles>
+
+            <rulesStrings>
+                <!-- A lot of these rule tags are custom ones added by IA, so don't copy these and expect them to work everywhere. -->
+                <li>title->[AUTHOR_nameDef]'s [stories]</li>
+                <li>title->[stories] of [location]</li>
+                <li>title->[topic]: [noun_any]</li>
+                <li>title->[topic], by [AUTHOR_nameDef]</li>
+                <li>title->[AUTHOR_nameDef]'s [thoughts] on [concept_any]</li>
+                <li>title->the [adjective_any] [stories]</li>
+                <li>title->[AUTHOR_nameDef]'s [adjective_any] [stories]</li>
+                <li>title->my time [at_location]</li>
+                <li>title->[AUTHOR_nameDef]'s time [at_location]</li>
+                <li>title->[AUTHOR_nameDef]'s [quest] [at_location]</li>
+                <li>title->[concept_any] [at_location]</li>
+                <li>title->[stories] of a [FACTION_pawnSingular]</li>
+                <li>title->[AUTHOR_nameDef] the [adjective_any] [FACTION_pawnSingular]</li>
+                <li>title->the [adjective_any] [FACTION_pawnsPlural] of [FACTION_name]</li>
+
+                <li>location(p=0.10)->the [terrain_feature]</li>
+                <li>location->[LOCATION_planetName]</li>
+                <li>location(p=3)->[LOCATION_mapName]</li>
+
+                <li>at_location(p=0.10)->at the [terrain_feature]</li>
+                <li>at_location->in [LOCATION_mapName]</li>
+                <li>at_location->at [LOCATION_mapName]</li>
+                <li>at_location->on [LOCATION_planetName]</li>
+
+                <li>topic->[noun_any]</li>
+                <li>topic->my [relative]</li>
+                <li>topic->the [quest]</li>
+                <li>topic->the [quest] of [noun_any]</li>
+                <li>topic->the [adjective_any] [quest]</li>
+                <li>topic->[location]</li>
+                <li>topic->[FACTION_name]</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+</Defs>

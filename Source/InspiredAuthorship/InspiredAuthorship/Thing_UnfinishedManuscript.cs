@@ -199,6 +199,21 @@ namespace InspiredAuthorship
                 defaultLabel = "DEV: Finish now",
                 action = CompleteBook,
             };
+
+            yield return new Command_Action()
+            {
+                defaultLabel = "DEV: Test titles",
+                action = delegate
+                {
+                    string s = "Titles by {0}".Formatted(author.LabelShort);
+                    for (int i = 0; i < 100; i++)
+                    {
+                        s += "\n" + BookGenerator.GenerateBookTitle(author);
+                    }
+                    Log.Message(s);
+                    Log.TryOpenLogWindow();
+                },
+            };
         }
 
         public override void ExposeData()

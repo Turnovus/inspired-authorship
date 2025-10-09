@@ -95,6 +95,8 @@
         <bookDefs>
             <li>Turn_Authorship_Memoir</li>
         </bookDefs>
+
+        <writtenBookNamer>Turn_Authorship_WrittenBookNamer</writtenBookNamer>
     </InspiredAuthorship.ModTuningDef>
 
 </Defs>

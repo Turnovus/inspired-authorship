@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Grammar;
 
 namespace InspiredAuthorship
 {
@@ -76,10 +77,63 @@ namespace InspiredAuthorship
         private static Thing GenerateBookInternal(Pawn author, QualityCategory quality)
         {
             ThingDef bookDef = MyDefOf.ModTuning.bookDefs.RandomElement();
-            Thing book = ThingMaker.MakeThing(bookDef);
+            CustomBook book = ThingMaker.MakeThing(bookDef) as CustomBook;
+
+            if (book == null)
+            {
+                Log.Error("Failed to generate book.");
+                return null;
+            }
+            
             book.TryGetComp<CompQuality>().SetQuality(quality, ArtGenerationContext.Colony);
+            book.ForceSetTitle(GenerateBookTitle(author));
             // TODO: Generate book details
+            
             return book;
+        }
+
+        public static string GenerateBookTitle(Pawn author)
+        {
+            GrammarRequest request = new GrammarRequest();
+            
+            if (author != null)
+            {
+                foreach (Rule rule in TaleData_Pawn.GenerateFrom(author).GetRules("AUTHOR", request.Constants))
+                    request.Rules.Add(rule);
+                foreach (Rule rule in RulesForLocation("LOCATION", author))
+                    request.Rules.Add(rule);
+                foreach (Rule rule in RulesForFaction("FACTION", author))
+                    request.Rules.Add(rule);
+            }
+            request.Includes.Add(MyDefOf.ModTuning.writtenBookNamer);
+            return GenText.CapitalizeAsTitle(GrammarResolver.Resolve("title", request)).StripTags();
+        }
+
+        public static IEnumerable<Rule> RulesForLocation(string prefix, Pawn pawn)
+        {
+            prefix += "_";
+            if (Find.World?.info.name != null)
+                yield return new Rule_String(prefix + "planetName", Find.World.info.name);
+            INameableWorldObject nameable = pawn?.MapHeld?.Parent as INameableWorldObject;
+            if (nameable != null)
+                yield return new Rule_String(prefix + "mapName", nameable.Name);
+        }
+
+        public static IEnumerable<Rule> RulesForFaction(string prefix, Pawn pawn)
+        {
+            if (pawn?.Faction == null)
+                yield break;
+            foreach (Rule rule in RulesForFaction(prefix, pawn.Faction))
+                yield return rule;
+        }
+
+        public static IEnumerable<Rule> RulesForFaction(string prefix, Faction faction)
+        {
+            prefix += "_";
+            if (faction.HasName)
+                yield return new Rule_String(prefix + "name", faction.Name);
+            yield return new Rule_String(prefix + "pawnSingular", faction.def.pawnSingular);
+            yield return new Rule_String(prefix + "pawnsPlural", faction.def.pawnsPlural);
         }
 
         public static void LogQuality(Pawn author, int ticksWorked)
