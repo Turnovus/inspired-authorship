@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+    <RulePackDef>
+        <defName>Turn_Authorship_BookDescriptionNew</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>desc->[start_book_description]. [middle_creation_details].\n\n[passages]</li>
+                <li>desc->[start_creation_details]. [middle_book_description].\n\n[passages]</li>
+
+                <li>start_book_description->A book [book_description]</li>
+                <li>start_book_description->This book [book_description]</li>
+
+                <li>middle_book_description->It [book_description]</li>
+
+                <li>book_description->is crudely bound with [bindings]</li>
+
+                <li>start_creation_details->This book was [creation_details]</li>
+
+                <li>middle_creation_details->It was [creation details]</li>
+
+                <li>creation_details->written on the planet [LOCATION_planetName] by [AUTHOR_nameFull] on the [creationDate]</li>
+
+                <li>bindings->string</li>
+                <li>bindings->tape</li>
+                <li>bindings->staples</li>
+                <li>bindings->leather straps</li>
+                <li>bindings->nails</li>
+                <li>bindings->glue</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
 
     <RulePackDef>
         <defName>Turn_Authorship_PassageStart</defName>

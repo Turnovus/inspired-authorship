@@ -97,6 +97,7 @@
         </bookDefs>
 
         <writtenBookNamer>Turn_Authorship_WrittenBookNamer</writtenBookNamer>
+        <writtenBookDescriberNew>Turn_Authorship_BookDescriptionNew</writtenBookDescriberNew>
 
         <passageStartRules>Turn_Authorship_PassageStart</passageStartRules>
         <passageMiddleRules>Turn_Authorship_PassageMiddle</passageMiddleRules>

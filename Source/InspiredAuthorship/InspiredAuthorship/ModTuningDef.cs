@@ -31,6 +31,7 @@ namespace InspiredAuthorship
         public List<ThingDef> bookDefs = new List<ThingDef>();
 
         public RulePackDef writtenBookNamer;
+        public RulePackDef writtenBookDescriberNew;
 
         public RulePackDef passageStartRules;
         public RulePackDef passageMiddleRules;
