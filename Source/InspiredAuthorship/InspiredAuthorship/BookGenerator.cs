@@ -96,46 +96,44 @@ namespace InspiredAuthorship
 
         public static string GenerateBookTitle(Pawn author)
         {
-            GrammarRequest request = new GrammarRequest();
-            
-            if (author != null)
-            {
-                foreach (Rule rule in TaleData_Pawn.GenerateFrom(author).GetRules("AUTHOR", request.Constants))
-                    request.Rules.Add(rule);
-                foreach (Rule rule in RulesForLocation("LOCATION", author))
-                    request.Rules.Add(rule);
-                foreach (Rule rule in RulesForFaction("FACTION", author))
-                    request.Rules.Add(rule);
-            }
+            GrammarRequest request = GetRequestFor(author);
             request.Includes.Add(MyDefOf.ModTuning.writtenBookNamer);
+            
             return GenText.CapitalizeAsTitle(GrammarResolver.Resolve("title", request)).StripTags();
         }
 
         public static string GenerateBookDescription(Pawn author)
         {
-            GrammarRequest request = new GrammarRequest();
+            GrammarRequest request = GetRequestFor(author);
             
-            if (author != null)
-            {
-                foreach (Rule rule in TaleData_Pawn.GenerateFrom(author).GetRules("AUTHOR", request.Constants))
-                    request.Rules.Add(rule);
-                foreach (Rule rule in RulesForLocation("LOCATION", author))
-                    request.Rules.Add(rule);
-                foreach (Rule rule in RulesForFaction("FACTION", author))
-                    request.Rules.Add(rule);
-                request.Rules.Add(GetDateRule(author));
-            }
             request.Includes.Add(MyDefOf.ModTuning.writtenBookDescriberNew);
-
             string passages = GenerateBookPassages(author);
             request.Rules.Add(new Rule_String("passages", passages));
             
             return GrammarResolver.Resolve("desc", request).StripTags();
         }
 
+        public static GrammarRequest GetRequestFor(Pawn author)
+        {
+            GrammarRequest request = new GrammarRequest();
+            
+            if (author != null)
+            {
+                foreach (Rule rule in TaleData_Pawn.GenerateFrom(author).GetRules("AUTHOR", request.Constants))
+                    request.Rules.Add(rule);
+                foreach (Rule rule in RulesForLocation("LOCATION", author))
+                    request.Rules.Add(rule);
+                foreach (Rule rule in RulesForFaction("FACTION", author))
+                    request.Rules.Add(rule);
+            }
+            request.Rules.Add(GetDateRule(author));
+
+            return request;
+        }
+
         public static Rule GetDateRule(Pawn author)
         {
-            Vector2 longLat = author.Tile == null
+            Vector2 longLat = author?.Tile == null
                 ? Vector2.zero
                 : Find.WorldGrid.LongLatOf(author.Tile);
             return new Rule_String("creationDate", GenDate.DateFullStringAt(GenTicks.TicksAbs, longLat));
