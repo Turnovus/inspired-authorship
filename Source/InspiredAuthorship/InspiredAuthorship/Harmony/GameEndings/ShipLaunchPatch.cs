@@ -33,7 +33,7 @@ namespace InspiredAuthorship
             // 2 - Looking for stfld RimWorld.StatsRecord::colonistsLaunched to inject
             // 3 - Patch done
             int flag = 0;
-            FieldInfo cryptosleepCasketField = null;
+            LocalBuilder cryptosleepCasketField = null;
             
             foreach (CodeInstruction instruction in instructions)
             {
@@ -49,7 +49,7 @@ namespace InspiredAuthorship
                     case 1:
                         if (instruction.opcode == OpCodes.Stloc_S)
                         {
-                            cryptosleepCasketField = instruction.operand as FieldInfo;
+                            cryptosleepCasketField = instruction.operand as LocalBuilder;
                             flag++;
                         }
 

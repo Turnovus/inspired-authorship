@@ -12,7 +12,7 @@ namespace InspiredAuthorship
     public static class QuestVictoryPatch
     {
         private static readonly MethodInfo Method_InitiateCountdown =
-            AccessTools.Method(typeof(ShipCountdown), nameof(ShipCountdown.InitiateCountdown));
+            AccessTools.Method(typeof(ShipCountdown), nameof(ShipCountdown.InitiateCountdown), new []{typeof(string)});
         
         private static readonly MethodInfo Method_LaunchPawns =
             AccessTools.Method(typeof(QuestVictoryPatch), nameof(LaunchPawns));
