@@ -56,6 +56,13 @@ namespace InspiredAuthorship
                 LocalBookTracker.CurrentTracker.Notify_BookImported(this);
         }
 
+        public override void Notify_Unequipped(Pawn pawn)
+        {
+            base.Notify_Unequipped(pawn);
+            if (Spawned)
+                LocalBookTracker.CurrentTracker.Notify_BookImported(this);
+        }
+
         #endregion
 
         private void Lost() => LocalBookTracker.CurrentTracker.Notify_BookLost(this);
