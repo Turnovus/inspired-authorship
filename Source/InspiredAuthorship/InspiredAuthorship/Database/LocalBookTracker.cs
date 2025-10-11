@@ -47,7 +47,11 @@ namespace InspiredAuthorship
             foreach (TrackedBook trackedBook in trackedBooks)
             {
                 if (trackedBook.book == book)
-                    trackedBook.bookStatus = newStatus;
+                {
+                    // Don't allow exported books to be lost/destroyed
+                    if (newStatus == BookStatus.None || trackedBook.bookStatus != BookStatus.Exported)
+                        trackedBook.bookStatus = newStatus;
+                }
             }
         }
 
