@@ -50,7 +50,8 @@ namespace InspiredAuthorship
         
         public void GenerateAndPlaceBook(QualityCategory quality)
         {
-            Thing book = BookGenerator.GenerateBook(author, quality);
+            CustomBook book = BookGenerator.GenerateBook(author, quality);
+            LocalBookTracker.CurrentTracker.RegisterBook(book, author);
 
             IntVec3 position = PositionHeld;
             Map map = MapHeld;
@@ -220,7 +221,7 @@ namespace InspiredAuthorship
                 defaultLabel = "DEV: Test description",
                 action = delegate
                 {
-                    Log.Message(BookGenerator.GenerateBookDescription(author));
+                    Log.Message(BookGenerator.GenerateBookDescription(author, out _));
                     Log.TryOpenLogWindow();
                 },
             };

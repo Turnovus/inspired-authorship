@@ -63,7 +63,7 @@ namespace InspiredAuthorship
             });
         }
 
-        public static Thing GenerateBook(Pawn author, QualityCategory quality)
+        public static CustomBook GenerateBook(Pawn author, QualityCategory quality)
         {
             generatingBook = true;
             try
@@ -76,7 +76,7 @@ namespace InspiredAuthorship
             }
         }
 
-        private static Thing GenerateBookInternal(Pawn author, QualityCategory quality)
+        private static CustomBook GenerateBookInternal(Pawn author, QualityCategory quality)
         {
             ThingDef bookDef = MyDefOf.ModTuning.bookDefs.RandomElement();
             CustomBook book = ThingMaker.MakeThing(bookDef) as CustomBook;
@@ -89,7 +89,9 @@ namespace InspiredAuthorship
             
             book.TryGetComp<CompQuality>().SetQuality(quality, ArtGenerationContext.Colony);
             book.ForceSetTitle(GenerateBookTitle(author));
-            book.ForceSetDescription(GenerateBookDescription(author));
+            
+            book.ForceSetDescription(GenerateBookDescription(author, out string passages));
+            book.innerDescription = passages;
             
             return book;
         }
@@ -102,12 +104,12 @@ namespace InspiredAuthorship
             return GenText.CapitalizeAsTitle(GrammarResolver.Resolve("title", request)).StripTags();
         }
 
-        public static string GenerateBookDescription(Pawn author)
+        public static string GenerateBookDescription(Pawn author, out string passages)
         {
             GrammarRequest request = GetRequestFor(author);
             
             request.Includes.Add(MyDefOf.ModTuning.writtenBookDescriberNew);
-            string passages = GenerateBookPassages(author);
+            passages = GenerateBookPassages(author);
             request.Rules.Add(new Rule_String("passages", passages));
             
             return GrammarResolver.Resolve("desc", request).StripTags();

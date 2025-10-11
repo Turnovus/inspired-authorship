@@ -40,4 +40,8 @@
       <ProjectReference Include="..\..\Passages\InspiredAuthorship.Passages\InspiredAuthorship.Passages.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Harmony\PawnSignals\" />
+    </ItemGroup>
+
 </Project>
