@@ -7,10 +7,14 @@ discussion
 dissertation
 essay
 examination
+lecture
 memoir
 monologue
 rant
+screed
 study
 thesis
+tirade
 tract
 treatise
+writing

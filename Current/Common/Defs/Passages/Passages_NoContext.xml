@@ -7,9 +7,26 @@
         <baseCommonality>0.01</baseCommonality>
         <rules>
             <rulesStrings>
-                <li>topic->a [story]</li>
+                <li>topic->a [tale_dressed]</li>
 
-                <li>detail->the [strife] of a [adjective_any] [person_any]</li>
+                <li>detail->the [strife]s of a [adjective_any] [person_any]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Story with subject -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>RandomStoryWithSubject</defName>
+        <baseCommonality>0.01</baseCommonality>
+        <rules>
+            <rulesStrings>
+                <li>topic->a [tale_dressed] about [subject]</li>
+
+                <li>detail->their [strife]s</li>
+                <li>detail->their [story]s</li>
+
+                <li>subject->a [person_any]</li>
+                <li>subject->a [adjective_any] [person_any]</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -20,8 +37,8 @@
         <baseCommonality>0.01</baseCommonality>
         <rules>
             <rulesStrings>
-                <li>topic->a [discussion]</li>
-                <li>topic->a [discussion] on [something]</li>
+                <li>topic->a [discussion_dressed]</li>
+                <li>topic->a [discussion_dressed] on [something]</li>
 
                 <li>detail->[something] and [something]</li>
                 <li>detail->counterpointing [something] with [something]</li>

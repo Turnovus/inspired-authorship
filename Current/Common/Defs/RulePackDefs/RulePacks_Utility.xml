@@ -30,6 +30,8 @@
                 <!-- Our custom string files -->
                 <li>strife->InspiredAuthorship/Words/Nouns/Strife</li>
                 <li>discussion->InspiredAuthorship/Words/Nouns/Discussion</li>
+                <li>tale->InspiredAuthorship/Words/Nouns/Tale</li>
+                <li>adjective_story->InspiredAuthorship/Words/Adjectives/Descriptors_Stories</li>
             </rulesFiles>
 
             <rulesStrings>
@@ -59,6 +61,15 @@
                 <li>adjective_any->[adjective_friendly]</li>
                 <li>adjective_any->[adjective_large]</li>
                 <li>adjective_any->[adjective_natural]</li>
+
+                <li>story_dressed->[story]</li>
+                <li>story_dressed->[adjective_story] [story]</li>
+
+                <li>discussion_dressed->[discussion]</li>
+                <li>discussion_dressed->[adjective_story] [discussion]</li>
+
+                <li>tale_dressed->[tale]</li>
+                <li>tale_dressed->[adjective_story] [tale]</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>

@@ -10,10 +10,10 @@
                 <li>topic->[AUTHOR_possessive] past</li>
                 <li>topic->[AUTHOR_possessive] backstory</li>
                 <li>topic->[AUTHOR_possessive] personal history</li>
-                <li>topic->[AUTHOR_possessive] past [story]</li>
+                <li>topic->[AUTHOR_possessive] past [story]s</li>
 
                 <li>detail->[period]</li>
-                <li>detail->a [story] from [period]</li>
+                <li>detail->a [story_dressed] from [period]</li>
                 <li>detail->the [strife] of a [backstory_any]</li>
                 <li>detail->the [strife] of [period]</li>
                 <li>detail->[period], and the [strife]s that came with it</li>
