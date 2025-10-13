@@ -14,4 +14,26 @@
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
 
+    <!-- Philosophy -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>RandomPhilosophy</defName>
+        <baseCommonality>0.01</baseCommonality>
+        <rules>
+            <rulesStrings>
+                <li>topic->a [discussion]</li>
+                <li>topic->a [discussion] on [something]</li>
+
+                <li>detail->[something] and [something]</li>
+                <li>detail->counterpointing [something] with [something]</li>
+                <li>detail->the concept of [something]</li>
+
+                <li>something(p=6)->[concept_any]</li>
+                <li>something->a [noun_concrete]</li>
+                <li>something->[noun_concrete]</li>
+                <li>something->a [adjective_any] [noun_concrete]</li>
+                <li>something->[adjective_any] [noun_concrete]s</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
 </Defs>

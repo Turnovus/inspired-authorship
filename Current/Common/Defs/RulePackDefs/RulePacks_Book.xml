@@ -29,6 +29,8 @@
                 <li>title->[stories] of a [FACTION_pawnSingular]</li>
                 <li>title->[AUTHOR_nameDef] the [adjective_any] [FACTION_pawnSingular]</li>
                 <li>title->the [adjective_any] [FACTION_pawnsPlural] of [FACTION_name]</li>
+                <li>title->a [FACTION_pawnSingular]'s [noun_any]</li>
+                <li>title->[AUTHOR_nameDef]'s [discussion]</li>
 
                 <li>location(p=0.10)->the [terrain_feature]</li>
                 <li>location->[LOCATION_planetName]</li>

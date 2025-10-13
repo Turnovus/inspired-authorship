@@ -29,6 +29,7 @@
 
                 <!-- Our custom string files -->
                 <li>strife->InspiredAuthorship/Words/Nouns/Strife</li>
+                <li>discussion->InspiredAuthorship/Words/Nouns/Discussion</li>
             </rulesFiles>
 
             <rulesStrings>
@@ -45,6 +46,12 @@
                 <li>noun_any->[terrain_feature]</li>
                 <li>noun_any->[quest]</li>
                 <li>noun_any->[person_any]</li>
+                <li>noun_any->[strife]</li>
+                <li>noun_any->[discussion]</li>
+
+                <li>noun_concrete->[relative]</li>
+                <li>noun_concrete->[terrain_feature]</li>
+                <li>noun_concrete->[person_any]</li>
 
                 <li>adjective_any->[adjective_angsty]</li>
                 <li>adjective_any->[adjective_badass]</li>

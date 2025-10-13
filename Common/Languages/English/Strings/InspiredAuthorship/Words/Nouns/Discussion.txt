@@ -1,0 +1,16 @@
+argument
+conversation
+dialogue
+diatribe
+discourse
+discussion
+dissertation
+essay
+examination
+memoir
+monologue
+rant
+study
+thesis
+tract
+treatise
