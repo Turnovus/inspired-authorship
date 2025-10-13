@@ -7,10 +7,14 @@ namespace InspiredAuthorship
 {
     public class LocalBookTracker : GameComponent
     {
-        public List<TrackedBook> trackedBooks;
+        public List<TrackedBook> trackedBooks = new List<TrackedBook>();
         
         public static LocalBookTracker CurrentTracker => Current.Game.GetComponent<LocalBookTracker>();
 
+        public LocalBookTracker(Game game)
+        {
+        }
+        
         public void RegisterBook(CustomBook book, Pawn author)
         {
             int id = InspiredAuthorship_Mod.LoadedMod.Database.RegisterBook(book.Title, book.innerDescription);
@@ -98,6 +102,9 @@ namespace InspiredAuthorship
             base.ExposeData();
             Scribe_Collections.Look(ref trackedBooks, "trackedBooks", LookMode.Deep);
 
+            if (trackedBooks.NullOrEmpty())
+                trackedBooks = new List<TrackedBook>();
+            
             if ((Scribe.mode == LoadSaveMode.Saving || Scribe.mode == LoadSaveMode.PostLoadInit) && trackedBooks.Count > 0)
                 WriteData();
         }
