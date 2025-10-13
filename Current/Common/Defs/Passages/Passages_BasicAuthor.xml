@@ -10,9 +10,20 @@
                 <li>topic->[AUTHOR_possessive] past</li>
                 <li>topic->[AUTHOR_possessive] backstory</li>
                 <li>topic->[AUTHOR_possessive] personal history</li>
+                <li>topic->[AUTHOR_possessive] past [story]</li>
 
-                <li>detail->[AUTHOR_possessive] childhood as a [AUTHOR_childhood]</li>
-                <li>detail->[AUTHOR_possessive] time as a [AUTHOR_adulthood]</li>
+                <li>detail->[period]</li>
+                <li>detail->a [story] from [period]</li>
+                <li>detail->the [strife] of a [backstory_any]</li>
+                <li>detail->the [strife] of [period]</li>
+                <li>detail->[period], and the [strife]s that came with it</li>
+
+                <li>period->[AUTHOR_possessive] childhood as a [AUTHOR_childhood]</li>
+                <li>period->[AUTHOR_possessive] time as a [AUTHOR_adulthood]</li>
+                <li>period->being a [backstory_any]</li>
+
+                <li>backstory_any->[AUTHOR_childhood]</li>
+                <li>backstory_any->[AUTHOR_adulthood]</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>

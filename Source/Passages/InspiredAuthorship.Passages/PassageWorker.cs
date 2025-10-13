@@ -5,7 +5,7 @@ using Verse.Grammar;
 
 namespace InspiredAuthorship.Passages
 {
-    public abstract class PassageWorker
+    public class PassageWorker
     {
         public PassageDef def;
 

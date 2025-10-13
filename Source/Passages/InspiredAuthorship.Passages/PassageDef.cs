@@ -8,7 +8,7 @@ namespace InspiredAuthorship.Passages
     {
         public float baseCommonality = 1.0f;
 
-        public Type workerClass;
+        public Type workerClass = typeof(PassageWorker);
 
         public RulePack rules;
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Random story -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>RandomStory</defName>
+        <baseCommonality>0.01</baseCommonality>
+        <rules>
+            <rulesStrings>
+                <li>topic->a [story]</li>
+
+                <li>detail->the [strife] of a [adjective_any] [person_any]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+</Defs>

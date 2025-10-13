@@ -31,8 +31,20 @@
     </RulePackDef>
 
     <RulePackDef>
+        <defName>Turn_Authorship_PassageUtility</defName>
+        <rulePack>
+            <include>
+                <li>Turn_Authorship_RulePackUtility</li>
+            </include>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
         <defName>Turn_Authorship_PassageStart</defName>
         <rulePack>
+            <include>
+                <li>Turn_Authorship_PassageUtility</li>
+            </include>
             <rulesStrings>
                 <li>passage->[AUTHOR_nameDef] opens with [topic], explaining [detail].</li>
             </rulesStrings>
@@ -42,6 +54,9 @@
     <RulePackDef>
         <defName>Turn_Authorship_PassageMiddle</defName>
         <rulePack>
+            <include>
+                <li>Turn_Authorship_PassageUtility</li>
+            </include>
             <rulesStrings>
                 <li>passage->[AUTHOR_nameDef] moves on to [topic], explaining [detail].</li>
             </rulesStrings>
@@ -51,6 +66,9 @@
     <RulePackDef>
         <defName>Turn_Authorship_PassageEnd</defName>
         <rulePack>
+            <include>
+                <li>Turn_Authorship_PassageUtility</li>
+            </include>
             <rulesStrings>
                 <li>passage->[AUTHOR_nameDef] closes with [topic], explaining [detail].</li>
             </rulesStrings>
