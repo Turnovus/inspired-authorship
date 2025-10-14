@@ -28,4 +28,22 @@
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
 
+
+    <!-- Author's passions -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>AuthorPassions</defName>
+        <workerClass>InspiredAuthorship.Passages.PassageWorker_SkillPassion</workerClass>
+        <rules>
+            <rulesStrings>
+                <li>topic(p=4)->[AUTHOR_possessive] passion for [passionSkill]</li>
+                <li>topic->a [discussion] about [passionSkill] work</li>
+                <li>topic->[passionSkill] work</li>
+
+                <li>detail->[subject]</li>
+                <li>detail->[AUTHOR_possessive] interest in [subject]</li>
+                <li>detail->[AUTHOR_possessive] knowledge in [subject]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
 </Defs>
