@@ -46,7 +46,9 @@
                 <li>Turn_Authorship_PassageUtility</li>
             </include>
             <rulesStrings>
-                <li>passage->[AUTHOR_nameDef] opens with [topic], explaining [detail].</li>
+                <li>passage->[AUTHOR_nameDef] opens with [topic], [discussing] [detail].</li>
+                <li>passage->The book opens with [AUTHOR_nameDef] [discussing] [topic] and [detail].</li>
+                <li>passage->The first [text] has [AUTHOR_nameDef] [discussing] [topic], specifically [detail].</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
@@ -58,7 +60,9 @@
                 <li>Turn_Authorship_PassageUtility</li>
             </include>
             <rulesStrings>
-                <li>passage->[AUTHOR_nameDef] moves on to [topic], explaining [detail].</li>
+                <li>passage->[AUTHOR_nameDef] moves on to [topic], [discussing] [detail].</li>
+                <li>passage->The book then continues with [AUTHOR_nameDef] [discussing] [topic] and [detail].</li>
+                <li>passage->The next [text] has [AUTHOR_nameDef] [discussing] [topic], specifically [detail].</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
@@ -70,7 +74,9 @@
                 <li>Turn_Authorship_PassageUtility</li>
             </include>
             <rulesStrings>
-                <li>passage->[AUTHOR_nameDef] closes with [topic], explaining [detail].</li>
+                <li>passage->[AUTHOR_nameDef] closes with [topic], [discussing] [detail].</li>
+                <li>passage->The book closes with [AUTHOR_nameDef] [discussing] [topic] and [detail]</li>
+                <li>passage->The final [text] has [AUTHOR_nameDef] [discussing] [topic], specifically [detail].</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>

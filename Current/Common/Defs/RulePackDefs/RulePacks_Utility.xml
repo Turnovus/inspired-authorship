@@ -31,7 +31,11 @@
                 <li>strife->InspiredAuthorship/Words/Nouns/Strife</li>
                 <li>discussion->InspiredAuthorship/Words/Nouns/Discussion</li>
                 <li>tale->InspiredAuthorship/Words/Nouns/Tale</li>
+                <li>text->InspiredAuthorship/Words/Nouns/TextSection</li>
+
                 <li>adjective_story->InspiredAuthorship/Words/Adjectives/Descriptors_Stories</li>
+
+                <li>discussing->InspiredAuthorship/Words/Verbs/Discussing</li>
             </rulesFiles>
 
             <rulesStrings>

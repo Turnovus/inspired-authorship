@@ -1,0 +1,7 @@
+article
+chapter
+entry
+paragraph
+passage
+text
+writing
