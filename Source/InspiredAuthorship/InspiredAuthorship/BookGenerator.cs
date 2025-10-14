@@ -168,7 +168,8 @@ namespace InspiredAuthorship
                 int numRequests = requests.Count;
                 for(int i = 0; i < numRequests; i++)
                 {
-                    GrammarRequest request = requests.RandomElement();
+                    int index = Rand.Range(0, requests.Count - 1);
+                    GrammarRequest request = requests[index];
                     
                     RulePackDef rulePackDef;
                     if (i == 0)
@@ -184,7 +185,7 @@ namespace InspiredAuthorship
                     if (i < maxPassages - 1)
                         description += "\n\n";
 
-                    requests.Remove(request);
+                    requests.RemoveAt(index);
                 }
             }
             
