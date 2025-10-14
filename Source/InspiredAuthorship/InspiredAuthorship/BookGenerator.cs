@@ -155,11 +155,21 @@ namespace InspiredAuthorship
                 maxPassages = Math.Min(maxPassages, MyDefOf.ModTuning.maxPassageCount);
                 int minPassages = Math.Min(maxPassages, MyDefOf.ModTuning.idealMinPassageCount);
                 List<PassageDef> usedPassages = new List<PassageDef>();
+                List<GrammarRequest> requests = new List<GrammarRequest>();
+
                 for (int i = 0; i < maxPassages; i++)
                 {
-                    GrammarRequest request = PassageGenerator.GetRandomGrammarFor(author, usedPassages, out PassageDef passage);
+                    GrammarRequest request =
+                        PassageGenerator.GetRandomGrammarFor(author, usedPassages, out PassageDef passage);
                     usedPassages.Add(passage);
+                    requests.Add(request);
+                }
 
+                int numRequests = requests.Count;
+                for(int i = 0; i < numRequests; i++)
+                {
+                    GrammarRequest request = requests.RandomElement();
+                    
                     RulePackDef rulePackDef;
                     if (i == 0)
                         rulePackDef = MyDefOf.ModTuning.passageStartRules;
@@ -167,12 +177,14 @@ namespace InspiredAuthorship
                         rulePackDef = MyDefOf.ModTuning.passageEndRules;
                     else
                         rulePackDef = MyDefOf.ModTuning.passageMiddleRules;
-                    
                     request.Includes.Add(rulePackDef);
+                    
                     description += GrammarResolver.Resolve("passage", request);
 
                     if (i < maxPassages - 1)
                         description += "\n\n";
+
+                    requests.Remove(request);
                 }
             }
             
