@@ -8,7 +8,7 @@ namespace InspiredAuthorship
     {
         public int lastUniqueId = -1;
         
-        public List<WrittenBookData> books;
+        public List<WrittenBookData> books = new List<WrittenBookData>();
 
         public int GetUniqueId() => ++lastUniqueId;
 
@@ -54,6 +54,9 @@ namespace InspiredAuthorship
         {
             Scribe_Values.Look(ref lastUniqueId, "lastUniqueId", -1);
             Scribe_Collections.Look(ref books, "books", LookMode.Deep);
+            
+            if (books.NullOrEmpty())
+                books = new List<WrittenBookData>();
         }
     }
 }
