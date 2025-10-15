@@ -51,13 +51,14 @@ namespace InspiredAuthorship
         public void GenerateAndPlaceBook(QualityCategory quality)
         {
             CustomBook book = BookGenerator.GenerateBook(author, quality);
-            LocalBookTracker.CurrentTracker.RegisterBook(book, author);
 
             IntVec3 position = PositionHeld;
             Map map = MapHeld;
             Destroy();
             
             GenPlace.TryPlaceThing(book, position, map, ThingPlaceMode.Near);
+            LocalBookTracker.CurrentTracker.RegisterBook(book, author);
+            
             SendCompletedMessage(book, quality);
         }
 

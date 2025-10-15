@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using LudeonTK;
 using RimWorld;
 using Verse;
 
@@ -10,6 +11,8 @@ namespace InspiredAuthorship
         public List<TrackedBook> trackedBooks = new List<TrackedBook>();
         
         public static LocalBookTracker CurrentTracker => Current.Game.GetComponent<LocalBookTracker>();
+        
+        public static string PlanetName => Find.World.info.name;
 
         public LocalBookTracker(Game game)
         {
@@ -17,7 +20,8 @@ namespace InspiredAuthorship
         
         public void RegisterBook(CustomBook book, Pawn author)
         {
-            int id = InspiredAuthorship_Mod.LoadedMod.Database.RegisterBook(book.Title, book.innerDescription);
+            int id = InspiredAuthorship_Mod.LoadedMod.Database.RegisterBook(
+                book.Title, book.innerDescription, author.Name.ToStringFull, PlanetName, Date.GetDateAt(book.MapHeld));
             TrackedBook tracked = new TrackedBook()
             {
                 id = id,
@@ -126,6 +130,15 @@ namespace InspiredAuthorship
             InspiredAuthorship_Mod.LoadedMod.Settings.Write();
         }
 
+        [DebugOutput("Inspired Authorship", true)]
+        public static void LogLocallyTrackedBooks()
+        {
+            StringBuilder sb = new StringBuilder("Books currently tracked this game:");
+            foreach (TrackedBook book in CurrentTracker.trackedBooks)
+                sb.AppendLine(book.DebugString);
+            Log.Message(sb.ToString());
+        }
+
         public class TrackedBook : IExposable
         {
             public int id;
@@ -133,6 +146,16 @@ namespace InspiredAuthorship
             public Thing book;
             public AuthorStatus authorStatus = AuthorStatus.None;
             public BookStatus bookStatus = BookStatus.None;
+
+            public string DebugString
+            {
+                get => "{0} - {1} ({2}) by {3} ({4})".Formatted(
+                    id.ToString(),
+                    book?.Label ?? "Unknown",
+                    bookStatus.ToString(),
+                    author?.Label ?? "Unknown",
+                    authorStatus.ToString());
+            }
             
             public void ExposeData()
             {

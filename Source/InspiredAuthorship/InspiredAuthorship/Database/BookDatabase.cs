@@ -12,7 +12,7 @@ namespace InspiredAuthorship
 
         public int GetUniqueId() => ++lastUniqueId;
 
-        public int RegisterBook(string title, string description)
+        public int RegisterBook(string title, string description, string authorName, string planetName, Date date)
         {
             int id = GetUniqueId();
             WrittenBookData book = new WrittenBookData()
@@ -20,6 +20,9 @@ namespace InspiredAuthorship
                 id = id,
                 title = title,
                 description = description,
+                authorName = authorName,
+                originPlanetName = planetName,
+                date = date,
             };
             books.Add(book);
             
