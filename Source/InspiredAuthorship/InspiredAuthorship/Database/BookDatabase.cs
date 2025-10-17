@@ -25,6 +25,7 @@ namespace InspiredAuthorship
                 date = date,
             };
             books.Add(book);
+            Write();
             
             return id;
         }
@@ -39,6 +40,8 @@ namespace InspiredAuthorship
                     return;
                 }
             }
+
+            Write();
         }
 
         public void SetBookStatus(int bookId, BookStatus status)
@@ -51,6 +54,8 @@ namespace InspiredAuthorship
                     return;
                 }
             }
+
+            Write();
         }
         
         public void ExposeData()
@@ -60,6 +65,11 @@ namespace InspiredAuthorship
             
             if (books.NullOrEmpty())
                 books = new List<WrittenBookData>();
+        }
+
+        public void Write()
+        {
+            InspiredAuthorship_Mod.LoadedMod.Settings.Write();
         }
     }
 }
