@@ -1,3 +1,4 @@
+using RimWorld;
 using Verse;
 
 namespace InspiredAuthorship
@@ -16,6 +17,8 @@ namespace InspiredAuthorship
 
         public Date date;
 
+        public QualityCategory quality;
+
         public AuthorStatus authorStatus = AuthorStatus.None;
         
         public BookStatus bookStatus = BookStatus.None;
@@ -28,6 +31,7 @@ namespace InspiredAuthorship
             Scribe_Values.Look(ref authorName, "authorName");
             Scribe_Values.Look(ref originPlanetName, "originPlanetName");
             Scribe_Deep.Look(ref date, "date");
+            Scribe_Values.Look(ref quality, "quality");
             Scribe_Values.Look(ref authorStatus, "authorStatus");
             Scribe_Values.Look(ref bookStatus, "bookStatus");
         }

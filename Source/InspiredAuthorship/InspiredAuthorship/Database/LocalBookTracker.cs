@@ -20,8 +20,9 @@ namespace InspiredAuthorship
         
         public void RegisterBook(CustomBook book, Pawn author)
         {
+            QualityCategory quality = book.compQuality?.Quality ?? QualityCategory.Normal;
             int id = InspiredAuthorship_Mod.LoadedMod.Database.RegisterBook(
-                book.Title, book.innerDescription, author.Name.ToStringFull, PlanetName, Date.GetDateAt(book.MapHeld));
+                book.Title, book.innerDescription, author.Name.ToStringFull, PlanetName, Date.GetDateAt(book.MapHeld), quality);
             TrackedBook tracked = new TrackedBook()
             {
                 id = id,

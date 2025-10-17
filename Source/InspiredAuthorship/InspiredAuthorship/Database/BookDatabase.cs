@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using RimWorld;
 using Verse;
 
 namespace InspiredAuthorship
@@ -12,7 +13,7 @@ namespace InspiredAuthorship
 
         public int GetUniqueId() => ++lastUniqueId;
 
-        public int RegisterBook(string title, string description, string authorName, string planetName, Date date)
+        public int RegisterBook(string title, string description, string authorName, string planetName, Date date, QualityCategory quality)
         {
             int id = GetUniqueId();
             WrittenBookData book = new WrittenBookData()
@@ -23,6 +24,7 @@ namespace InspiredAuthorship
                 authorName = authorName,
                 originPlanetName = planetName,
                 date = date,
+                quality = quality,
             };
             books.Add(book);
             Write();
