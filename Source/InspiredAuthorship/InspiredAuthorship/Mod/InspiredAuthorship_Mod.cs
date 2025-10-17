@@ -27,6 +27,19 @@ namespace InspiredAuthorship
             drawRect.yMin += HeaderHeight;
             DrawTabs(drawRect);
             drawRect.yMin += TabsHeight;
+
+            switch (activeTab)
+            {
+                case SettingsTab.General:
+                    DrawGeneralSettings(drawRect);
+                    break;
+                case SettingsTab.Spawning:
+                    DrawSpawningSettings(drawRect);
+                    break;
+                case SettingsTab.Database:
+                    DrawDatabase(drawRect);
+                    break;
+            }
         }
 
         private void DrawTabs(Rect inRect)
@@ -44,6 +57,21 @@ namespace InspiredAuthorship
             ("InspiredAuthorship.Enums.SettingsTab." + forTab.ToString()).Translate(),
             () => activeTab = forTab,
             activeTab == forTab);
+
+        private void DrawGeneralSettings(Rect inRect)
+        {
+            Widgets.Label(inRect, "TODO - General");
+        }
+
+        private void DrawSpawningSettings(Rect inRect)
+        {
+            Widgets.Label(inRect, "TODO - Spawning");
+        }
+
+        private void DrawDatabase(Rect inRect)
+        {
+            Widgets.Label(inRect, "TODO - Database");
+        }
 
         public enum SettingsTab
         {
