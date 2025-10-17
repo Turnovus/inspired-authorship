@@ -19,4 +19,8 @@
     <InspiredAuthorship.Letters.BookFinished.Content>{PAWN_nameDef} has finished working on {PAWN_possessive} manuscript, and has bound the final draft into a book.</InspiredAuthorship.Letters.BookFinished.Content>
     <InspiredAuthorship.Letters.BookFinished.Content.NoAuthor>A manuscript has been finalized and bound into a book.</InspiredAuthorship.Letters.BookFinished.Content.NoAuthor>
 
+    <InspiredAuthorship.Enums.SettingsTab.General>General</InspiredAuthorship.Enums.SettingsTab.General>
+    <InspiredAuthorship.Enums.SettingsTab.Spawning>Spawning</InspiredAuthorship.Enums.SettingsTab.Spawning>
+    <InspiredAuthorship.Enums.SettingsTab.Database>Database</InspiredAuthorship.Enums.SettingsTab.Database>
+
 </LanguageData>
