@@ -13,11 +13,12 @@ namespace InspiredAuthorship
 
         public int GetUniqueId() => ++lastUniqueId;
 
-        public int RegisterBook(string title, string description, string authorName, string planetName, Date date, QualityCategory quality)
+        public int RegisterBook(string defName, string title, string description, string authorName, string planetName, Date date, QualityCategory quality)
         {
             int id = GetUniqueId();
             WrittenBookData book = new WrittenBookData()
             {
+                defName = defName,
                 id = id,
                 title = title,
                 description = description,

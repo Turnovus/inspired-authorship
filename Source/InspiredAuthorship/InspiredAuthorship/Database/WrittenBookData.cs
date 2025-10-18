@@ -7,6 +7,8 @@ namespace InspiredAuthorship
     {
         public int id;
 
+        public string defName;
+
         public string title;
         
         public string description;
@@ -26,6 +28,7 @@ namespace InspiredAuthorship
         public void ExposeData()
         {
             Scribe_Values.Look(ref id, "id");
+            Scribe_Values.Look(ref defName, "defName");
             Scribe_Values.Look(ref title, "title");
             Scribe_Values.Look(ref description, "description");
             Scribe_Values.Look(ref authorName, "authorName");

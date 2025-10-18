@@ -39,5 +39,10 @@ namespace InspiredAuthorship
             int year = GenDate.Year(ticks, coordinates.x);
             return new Date(day, quadrum, year);
         }
+
+        public override string ToString() => "InspiredAuthorship.ToString.Date".Translate(
+            day,
+            quadrum.Label(),
+            year);
     }
 }

@@ -23,4 +23,18 @@
     <InspiredAuthorship.Enums.SettingsTab.Spawning>Spawning</InspiredAuthorship.Enums.SettingsTab.Spawning>
     <InspiredAuthorship.Enums.SettingsTab.Database>Database</InspiredAuthorship.Enums.SettingsTab.Database>
 
+    <InspiredAuthorship.Enums.AuthorStatus.None>None</InspiredAuthorship.Enums.AuthorStatus.None>
+    <InspiredAuthorship.Enums.AuthorStatus.Dead>Dead</InspiredAuthorship.Enums.AuthorStatus.Dead>
+    <InspiredAuthorship.Enums.AuthorStatus.Missing>Missing</InspiredAuthorship.Enums.AuthorStatus.Missing>
+    <InspiredAuthorship.Enums.AuthorStatus.Escaped>Escaped</InspiredAuthorship.Enums.AuthorStatus.Escaped>
+
+    <InspiredAuthorship.Enums.BookStatus.None>None</InspiredAuthorship.Enums.BookStatus.None>
+    <InspiredAuthorship.Enums.BookStatus.Destroyed>Destroyed</InspiredAuthorship.Enums.BookStatus.Destroyed>
+    <InspiredAuthorship.Enums.BookStatus.Missing>Lost</InspiredAuthorship.Enums.BookStatus.Missing>
+    <InspiredAuthorship.Enums.BookStatus.Exported>Exported</InspiredAuthorship.Enums.BookStatus.Exported>
+
+    <InspiredAuthorship.ToString.Date>{0} of {1}, {2}</InspiredAuthorship.ToString.Date>
+
+    <InspiredAuthorship.Settings.NoBooksInDatabase>Nothing to display. Go write some books!</InspiredAuthorship.Settings.NoBooksInDatabase>
+
 </LanguageData>
