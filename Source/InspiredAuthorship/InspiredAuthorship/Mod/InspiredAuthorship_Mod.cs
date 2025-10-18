@@ -119,8 +119,29 @@ namespace InspiredAuthorship
             if (altRow)
                 Widgets.DrawHighlight(rect);
             
+            string defLabel = DefDatabase<ThingDef>.GetNamedSilentFail(data.defName ?? "")?.label ?? "ERR: " + data.defName;
+            
+            string authorStatus = ("InspiredAuthorship.Enums.AuthorStatus." + data.authorStatus).Translate();
+            string author = "{0} ({1})".Formatted(data.authorName, authorStatus);
+            
+            string bookStatus = ("InspiredAuthorship.Enums.BookStatus." + data.bookStatus).Translate();
+            
+            DrawDataRow(
+                rect,
+                data.description,
+                data.id,
+                defLabel,
+                data.title,
+                author,
+                data.date,
+                data.quality,
+                bookStatus);
+        }
+        
+        private void DrawDataRow(Rect rect, string description, int id, string defLabel, string title, string author, Date date, QualityCategory quality, string bookStatus)
+        {
             Widgets.DrawHighlightIfMouseover(rect);
-            TooltipHandler.TipRegion(rect, data.description);
+            TooltipHandler.TipRegion(rect, description);
 
             float bookIdWidth = (BookIdWidthRatio / TotalBookDetailWidth) * rect.width;
             float bookMajorDetailWidth = (BookMajorDetailWidthRatio / TotalBookDetailWidth) * rect.width;
@@ -129,27 +150,24 @@ namespace InspiredAuthorship
             // ID#
             Rect workRect = new Rect(rect);
             workRect.width = bookIdWidth;
-            Widgets.Label(workRect, data.id.ToString());
+            Widgets.Label(workRect, id.ToString());
             DrawDividerRight(workRect);
             
             // ThingDef.label
             workRect.x += workRect.width;
             workRect.width = bookMinorDetailWidth;
-            string defLabel = DefDatabase<ThingDef>.GetNamedSilentFail(data.defName ?? "")?.label ?? "ERR: " + data.defName;
             Widgets.Label(workRect, defLabel);
             DrawDividerRight(workRect);
             
             // Title
             workRect.x += workRect.width;
             workRect.width = bookMajorDetailWidth;
-            Widgets.Label(workRect, data.title);
+            Widgets.Label(workRect, title);
             DrawDividerRight(workRect);
             
             // Author
             workRect.x += workRect.width;
-            string authorStatus = ("InspiredAuthorship.Enums.AuthorStatus." + data.authorStatus).Translate();
-            string authorFull = "{0} ({1})".Formatted(data.authorName, authorStatus);
-            Widgets.Label(workRect, authorFull);
+            Widgets.Label(workRect, author);
             DrawDividerRight(workRect);
             
             // Planet of origin
@@ -161,18 +179,17 @@ namespace InspiredAuthorship
             
             //Date
             workRect.x += workRect.width;
-            Widgets.Label(workRect, data.date.ToString());
+            Widgets.Label(workRect, date.ToString());
             DrawDividerRight(workRect);
             
             // Quality
             workRect.x += workRect.width;
             workRect.width = bookMinorDetailWidth;
-            Widgets.Label(workRect, data.quality.GetLabel());
+            Widgets.Label(workRect, quality.GetLabel());
             DrawDividerRight(workRect);
             
             //Status
             workRect.x += workRect.width;
-            string bookStatus = ("InspiredAuthorship.Enums.BookStatus." + data.bookStatus).Translate();
             Widgets.Label(workRect, bookStatus);
         }
 
