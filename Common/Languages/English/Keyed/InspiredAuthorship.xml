@@ -23,6 +23,13 @@
     <InspiredAuthorship.Enums.SettingsTab.Spawning>Spawning</InspiredAuthorship.Enums.SettingsTab.Spawning>
     <InspiredAuthorship.Enums.SettingsTab.Database>Database</InspiredAuthorship.Enums.SettingsTab.Database>
 
+    <InspiredAuthorship.Data.DefLabel>Type</InspiredAuthorship.Data.DefLabel>
+    <InspiredAuthorship.Data.Title>Title</InspiredAuthorship.Data.Title>
+    <InspiredAuthorship.Data.Author>Author</InspiredAuthorship.Data.Author>
+    <InspiredAuthorship.Data.Date>Date</InspiredAuthorship.Data.Date>
+    <InspiredAuthorship.Data.Quality>Quality</InspiredAuthorship.Data.Quality>
+    <InspiredAuthorship.Data.Status>Status</InspiredAuthorship.Data.Status>
+
     <InspiredAuthorship.Enums.AuthorStatus.None>None</InspiredAuthorship.Enums.AuthorStatus.None>
     <InspiredAuthorship.Enums.AuthorStatus.Dead>Dead</InspiredAuthorship.Enums.AuthorStatus.Dead>
     <InspiredAuthorship.Enums.AuthorStatus.Missing>Missing</InspiredAuthorship.Enums.AuthorStatus.Missing>

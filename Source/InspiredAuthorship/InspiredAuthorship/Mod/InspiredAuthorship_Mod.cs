@@ -93,13 +93,30 @@ namespace InspiredAuthorship
                 Widgets.Label(inRect, "InspiredAuthorship.Settings.NoBooksInDatabase".Translate());
                 return;
             }
+
+            Rect headerRect = new Rect(inRect);
+            headerRect.height = BookEntryHeight;
+            headerRect.width -= ScrollbarWidth;
+            DrawDataRow(headerRect, 
+                null, 
+                "#",
+                "InspiredAuthorship.Data.DefLabel".Translate(),
+                "InspiredAuthorship.Data.Title".Translate(),
+                "InspiredAuthorship.Data.Author".Translate(),
+                "InspiredAuthorship.Data.Date".Translate(),
+                "InspiredAuthorship.Data.Quality".Translate(),
+                "InspiredAuthorship.Data.Status".Translate());
+            Widgets.DrawLineHorizontal(headerRect.xMin, headerRect.yMax, headerRect.width);
             
-            Rect scrollRect = new Rect(inRect);
+            Rect dataRect = new Rect(inRect);
+            dataRect.yMin += BookEntryHeight;
+            
+            Rect scrollRect = new Rect(dataRect);
             scrollRect.y = 0f;
             scrollRect.height = bookCount * BookEntryHeight;
             scrollRect.xMax -= ScrollbarWidth;
-                
-            Widgets.BeginScrollView(inRect, ref databaseScroll, scrollRect);
+            
+            Widgets.BeginScrollView(dataRect, ref databaseScroll, scrollRect);
 
             bool altRow = false;
             Rect rowRect = new Rect(scrollRect);
@@ -129,19 +146,22 @@ namespace InspiredAuthorship
             DrawDataRow(
                 rect,
                 data.description,
-                data.id,
+                data.id.ToString(),
                 defLabel,
                 data.title,
                 author,
-                data.date,
-                data.quality,
+                data.date.ToString(),
+                data.quality.GetLabel(),
                 bookStatus);
         }
         
-        private void DrawDataRow(Rect rect, string description, int id, string defLabel, string title, string author, Date date, QualityCategory quality, string bookStatus)
+        private void DrawDataRow(Rect rect, string description, string id, string defLabel, string title, string author, string date, string quality, string bookStatus)
         {
-            Widgets.DrawHighlightIfMouseover(rect);
-            TooltipHandler.TipRegion(rect, description);
+            if (!description.NullOrEmpty())
+            {
+                Widgets.DrawHighlightIfMouseover(rect);
+                TooltipHandler.TipRegion(rect, description);
+            }
 
             float bookIdWidth = (BookIdWidthRatio / TotalBookDetailWidth) * rect.width;
             float bookMajorDetailWidth = (BookMajorDetailWidthRatio / TotalBookDetailWidth) * rect.width;
@@ -150,7 +170,7 @@ namespace InspiredAuthorship
             // ID#
             Rect workRect = new Rect(rect);
             workRect.width = bookIdWidth;
-            Widgets.Label(workRect, id.ToString());
+            Widgets.Label(workRect, id);
             DrawDividerRight(workRect);
             
             // ThingDef.label
@@ -179,13 +199,13 @@ namespace InspiredAuthorship
             
             //Date
             workRect.x += workRect.width;
-            Widgets.Label(workRect, date.ToString());
+            Widgets.Label(workRect, date);
             DrawDividerRight(workRect);
             
             // Quality
             workRect.x += workRect.width;
             workRect.width = bookMinorDetailWidth;
-            Widgets.Label(workRect, quality.GetLabel());
+            Widgets.Label(workRect, quality);
             DrawDividerRight(workRect);
             
             //Status
