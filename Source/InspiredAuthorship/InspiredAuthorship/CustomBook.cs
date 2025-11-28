@@ -39,44 +39,6 @@ namespace InspiredAuthorship
                 base.GenerateBook(author, fixedDate); // TODO: Load a saved book
         }
 
-        #region Signals
-
-        public override void Notify_LeftBehind() => Lost();
-
-        public override void Notify_AbandonedAtTile(PlanetTile tile) => Lost();
-
-        public override void Notify_MyMapRemoved() => Lost();
-
-        public override void PreTraded(TradeAction action, Pawn playerNegotiator, ITrader trader)
-        {
-            base.PreTraded(action, playerNegotiator, trader);
-            if (action == TradeAction.PlayerSells)
-                LocalBookTracker.CurrentTracker.Notify_BookExported(this);
-            else if (action == TradeAction.PlayerBuys)
-                LocalBookTracker.CurrentTracker.Notify_BookImported(this);
-        }
-
-        public override void Notify_Unequipped(Pawn pawn)
-        {
-            base.Notify_Unequipped(pawn);
-            if (Spawned)
-                LocalBookTracker.CurrentTracker.Notify_BookImported(this);
-        }
-
-        #endregion
-
-        private void Lost() => LocalBookTracker.CurrentTracker.Notify_BookLost(this);
-
-        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
-        {
-            if (mode == DestroyMode.Vanish)
-                Lost();
-            else
-                LocalBookTracker.CurrentTracker.Notify_BookDestroyed(this);
-            
-            base.Destroy(mode);
-        }
-
         public override void ExposeData()
         {
             base.ExposeData();

@@ -20,10 +20,6 @@ namespace InspiredAuthorship
         public Date date;
 
         public QualityCategory quality;
-
-        public AuthorStatus authorStatus = AuthorStatus.None;
-        
-        public BookStatus bookStatus = BookStatus.None;
         
         public void ExposeData()
         {
@@ -35,24 +31,6 @@ namespace InspiredAuthorship
             Scribe_Values.Look(ref originPlanetName, "originPlanetName");
             Scribe_Deep.Look(ref date, "date");
             Scribe_Values.Look(ref quality, "quality");
-            Scribe_Values.Look(ref authorStatus, "authorStatus");
-            Scribe_Values.Look(ref bookStatus, "bookStatus");
         }
-    }
-
-    public enum AuthorStatus
-    {
-        None,
-        Dead,
-        Missing,
-        Escaped,
-    }
-
-    public enum BookStatus
-    {
-        None,
-        Destroyed,
-        Missing,
-        Exported,
     }
 }

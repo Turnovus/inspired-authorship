@@ -32,34 +32,6 @@ namespace InspiredAuthorship
             
             return id;
         }
-
-        public void SetAuthorStatus(int bookId, AuthorStatus status)
-        {
-            foreach (WrittenBookData book in books)
-            {
-                if (book.id == bookId)
-                {
-                    book.authorStatus = status;
-                    return;
-                }
-            }
-
-            Write();
-        }
-
-        public void SetBookStatus(int bookId, BookStatus status)
-        {
-            foreach (WrittenBookData book in books)
-            {
-                if (book.id == bookId)
-                {
-                    book.bookStatus = status;
-                    return;
-                }
-            }
-
-            Write();
-        }
         
         public void ExposeData()
         {

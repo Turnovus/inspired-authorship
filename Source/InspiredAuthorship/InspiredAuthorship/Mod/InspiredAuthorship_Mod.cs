@@ -14,10 +14,10 @@ namespace InspiredAuthorship
 
         public const float BookIdWidthRatio = 0.5f;
         public const float BookMajorDetailWidthRatio = 5.5f; // Title, author, date
-        public const float BookMinorDetailWidthRatio = 2.5f; // Status, quality, defName
+        public const float BookMinorDetailWidthRatio = 2.5f; // Quality, defName
 
         public const float TotalBookDetailWidth =
-            BookIdWidthRatio + BookMajorDetailWidthRatio * 3 + BookMinorDetailWidthRatio * 3;
+            BookIdWidthRatio + BookMajorDetailWidthRatio * 3 + BookMinorDetailWidthRatio * 2;
         
         public SettingsTab activeTab = SettingsTab.General;
 
@@ -104,8 +104,7 @@ namespace InspiredAuthorship
                 "InspiredAuthorship.Data.Title".Translate(),
                 "InspiredAuthorship.Data.Author".Translate(),
                 "InspiredAuthorship.Data.Date".Translate(),
-                "InspiredAuthorship.Data.Quality".Translate(),
-                "InspiredAuthorship.Data.Status".Translate());
+                "InspiredAuthorship.Data.Quality".Translate());
             Widgets.DrawLineHorizontal(headerRect.xMin, headerRect.yMax, headerRect.width);
             
             Rect dataRect = new Rect(inRect);
@@ -138,24 +137,18 @@ namespace InspiredAuthorship
             
             string defLabel = DefDatabase<ThingDef>.GetNamedSilentFail(data.defName ?? "")?.label ?? "ERR: " + data.defName;
             
-            string authorStatus = ("InspiredAuthorship.Enums.AuthorStatus." + data.authorStatus).Translate();
-            string author = "{0} ({1})".Formatted(data.authorName, authorStatus);
-            
-            string bookStatus = ("InspiredAuthorship.Enums.BookStatus." + data.bookStatus).Translate();
-            
             DrawDataRow(
                 rect,
                 data.description,
                 data.id.ToString(),
                 defLabel,
                 data.title,
-                author,
+                data.authorName,
                 data.date.ToString(),
-                data.quality.GetLabel(),
-                bookStatus);
+                data.quality.GetLabel());
         }
         
-        private void DrawDataRow(Rect rect, string description, string id, string defLabel, string title, string author, string date, string quality, string bookStatus)
+        private void DrawDataRow(Rect rect, string description, string id, string defLabel, string title, string author, string date, string quality)
         {
             if (!description.NullOrEmpty())
             {
@@ -207,10 +200,6 @@ namespace InspiredAuthorship
             workRect.width = bookMinorDetailWidth;
             Widgets.Label(workRect, quality);
             DrawDividerRight(workRect);
-            
-            //Status
-            workRect.x += workRect.width;
-            Widgets.Label(workRect, bookStatus);
         }
 
         private void DrawDividerRight(Rect rect)
