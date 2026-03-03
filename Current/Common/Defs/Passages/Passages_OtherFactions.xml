@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Enemy Faction -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>EnemyFaction</defName>
+        <workerClass>InspiredAuthorship.Passages.PassageWorker_HostileFaction</workerClass>
+        <rules>
+            <rulesStrings>
+                <li>topic->a [enemyFaction], [otherFaction_name]</li>
+                <li>topic->the faction [otherFaction_name], a [enemyFaction]</li>
+                <li>topic->the [enemyFaction] known as [otherFaction_name]</li>
+
+                <li>detail->their [adjective_evil] leader, [otherFaction_leader]</li>
+                <li>detail->the threat they pose to [AUTHOR_factionName]</li>
+                <li>detail->their [adjective_evil] plans</li>
+                <li>detail->how [adjective_evil] their [otherFaction_pawnsPlural] are</li>
+                <li>detail->the [enemy_broad] of [adjective_evil] [otherFaction_pawnsPlural]</li>
+
+                <li>enemyFaction(p=2.5)->[adjective_evil] [enemy_broad]</li>
+                <li>enemyFaction->[enemy_broad] most [adjective_evil]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+</Defs>

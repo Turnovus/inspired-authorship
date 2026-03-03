@@ -32,7 +32,9 @@
                 <li>discussion->InspiredAuthorship/Words/Nouns/Discussion</li>
                 <li>tale->InspiredAuthorship/Words/Nouns/Tale</li>
                 <li>text->InspiredAuthorship/Words/Nouns/TextSection</li>
+                <li>enemy_broad->InspiredAuthorship/Words/Nouns/EnemyBroad</li>
 
+                <li>adjective_evil->InspiredAuthorship/Words/Adjectives/Evil</li>
                 <li>adjective_story->InspiredAuthorship/Words/Adjectives/Descriptors_Stories</li>
 
                 <li>discussing->InspiredAuthorship/Words/Verbs/Discussing</li>
@@ -65,6 +67,7 @@
                 <li>adjective_any->[adjective_friendly]</li>
                 <li>adjective_any->[adjective_large]</li>
                 <li>adjective_any->[adjective_natural]</li>
+                <li>adjective_any->[adjective_evil]</li>
 
                 <li>story_dressed->[story]</li>
                 <li>story_dressed->[adjective_story] [story]</li>
