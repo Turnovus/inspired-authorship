@@ -27,7 +27,8 @@ namespace InspiredAuthorship.Passages
             yield return new Rule_String("otherFaction_defLabel", faction.def.LabelCap);
             yield return new Rule_String("otherFaction_pawnSingular", faction.def.pawnSingular);
             yield return new Rule_String("otherFaction_pawnsPlural", faction.def.pawnsPlural);
-            yield return new Rule_String("otherFaction_leader", faction.leader.LabelCap);
+            if(faction.leader != null)
+                yield return new Rule_String("otherFaction_leader", faction.leader.Name.ToStringFull);
         }
 
         private IEnumerable<Faction> AllFactions => Find.FactionManager.GetFactions(allowNonHumanlike: false);
