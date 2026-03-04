@@ -17,8 +17,32 @@
                 <li>detail->how [adjective_evil] their [otherFaction_pawnsPlural] are</li>
                 <li>detail->the [enemy_broad] of [adjective_evil] [otherFaction_pawnsPlural]</li>
 
-                <li>enemyFaction(p=2.5)->[adjective_evil] [enemy_broad]</li>
+                <li>enemyFaction->[otherFaction_defLabel]</li>
+                <li>enemyFaction->[adjective_evil] [otherFaction_defLabel]</li>
+                <li>enemyFaction->[adjective_evil] [enemy_broad]</li>
                 <li>enemyFaction->[enemy_broad] most [adjective_evil]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+
+    <!-- Allied Faction -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>AllyFaction</defName>
+        <workerClass>InspiredAuthorship.Passages.PassageWorker_AlliedFaction</workerClass>
+        <rules>
+            <rulesStrings>
+                <li>topic->a [friendlyFaction], [otherFaction_name]</li>
+                <li>topic->the faction [otherFaction_name], a [friendlyFaction]</li>
+                <li>topic->the [friendlyFaction] known as [otherFaction_name]</li>
+
+                <li>detail->their [adjective_friendly] leader, [otherFaction_leader]</li>
+                <li>detail->the boons they offer to [AUTHOR_factionName]</li>
+                <li>detail->their [adjective_friendly] alliance</li>
+                <li>detail->how [adjective_friendly] their [otherFaction_pawnsPlural] are</li>
+
+                <li>friendlyFaction->[otherFaction_defLabel]</li>
+                <li>friendlyFaction->[adjective_friendly] [otherFaction_defLabel]</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>

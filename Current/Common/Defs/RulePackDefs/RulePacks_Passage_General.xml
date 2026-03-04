@@ -39,7 +39,7 @@
             <rulesStrings>
                 <li>topic_and_detail->[topic] and [detail]</li>
                 <li>topic_and_detail->[topic], specifically [detail]</li>
-                <li>topic_and_detail->[detail] as a part of [topic]</li>
+                <!-- <li>topic_and_detail->[detail] as a part of [topic]</li> -->
             </rulesStrings>
         </rulePack>
     </RulePackDef>
@@ -68,6 +68,8 @@
                 <li>passage->[AUTHOR_nameDef] moves on to [topic], [discussing] [detail].</li>
                 <li>passage->The book then continues with [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
                 <li>passage->The next [text] has [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
+                <li>passage->What follows is a [text] on [topic_and_detail].</li>
+                <li>passage->The next [text], entitled "[noun_any]," is a [discussion] on [topic_and_detail].</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
