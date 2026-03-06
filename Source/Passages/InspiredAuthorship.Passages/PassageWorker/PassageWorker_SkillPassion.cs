@@ -7,7 +7,7 @@ namespace InspiredAuthorship.Passages
 {
     public class PassageWorker_SkillPassion : PassageWorker
     {
-        public override bool CanUseFor(Pawn author)
+        protected override bool CanUseForInt(Pawn author)
         {
             foreach (SkillRecord record in author.skills.skills)
                 if (record.passion != Passion.None)

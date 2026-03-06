@@ -9,9 +9,13 @@ namespace InspiredAuthorship.Passages
     {
         public PassageDef def;
 
-        public virtual float CommonalityFor(Pawn author) => def.baseCommonality;
+        public float CommonalityFor(Pawn author) => CommonalityForInt(author);
 
-        public virtual bool CanUseFor(Pawn author) => true;
+        public float CommonalityForInt(Pawn author) => def.baseCommonality;
+
+        public bool CanUseFor(Pawn author) => CanUseForInt(author);
+
+        protected virtual bool CanUseForInt(Pawn author) => true;
 
         public virtual IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request)
         {

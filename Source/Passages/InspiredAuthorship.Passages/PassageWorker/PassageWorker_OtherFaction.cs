@@ -10,7 +10,7 @@ namespace InspiredAuthorship.Passages
     {
         public abstract bool IsAcceptableFaction(Faction faction);
         
-        public override bool CanUseFor(Pawn author) => AllFactions.Any(IsAcceptableFaction);
+        protected override bool CanUseForInt(Pawn author) => AllFactions.Any(IsAcceptableFaction);
 
         public override IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request)
         {
