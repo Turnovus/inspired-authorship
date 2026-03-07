@@ -24,7 +24,7 @@
 
 
     <!-- Nudist -->
-    <InspiredAuthorship.Passages.PassageDef>
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
         <defName>TraitNudist</defName>
 
         <requiresAnyTrait>
@@ -42,6 +42,53 @@
                 <li>detail->confining garments</li>
                 <li>detail->how [adjective_evil] clothing is</li>
                 <li>detail->the liberty of bare skin</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Kind -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitKind</defName>
+
+        <requiresAnyTrait>
+            <li>Kind</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->kindness</li>
+                <li>topic->[AUTHOR_possessive] kind nature</li>
+                <li>topic->being kind</li>
+
+                <li>detail->proper decorum</li>
+                <li>detail->respecting the feelings of others</li>
+                <li>detail->the importance of politeness</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Cannibal -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitCannibal</defName>
+
+        <requiresAnyTrait>
+            <li>Cannibal</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->cannibalism</li>
+                <li>topic->[AUTHOR_possessive] taste for human flesh</li>
+                <li>topic->being a cannibal</li>
+
+                <li>detail->how human meat tastes</li>
+                <li>detail->how to butcher a human</li>
+                <li>detail->why human meat is superior</li>
+                <li>detail->the flavor profiles of raiders from each of [LOCATION_planetName]'s faction</li>
+                <li>detail->which of [AUTHOR_possessive] fellow [FACTION_pawnsPlural] look the tastiest</li>
+                <li>detail->a ranking of [PAWN_possessive] fellow [FACTION_pawnsPlural] by how tasty they look</li>
+
+                <li MayRequire="Ludeon.RimWorld.Biotech">detail->a ranking of each xenotype by flavor</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>

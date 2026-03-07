@@ -54,6 +54,7 @@
                 <li>passage->[AUTHOR_nameDef] opens with [topic], [discussing] [detail].</li>
                 <li>passage->The book opens with [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
                 <li>passage->The first [text] has [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
+                <li>passage->The first [text], entitled "[noun_any]," is a [discussion] on [topic_and_detail].</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
@@ -69,6 +70,7 @@
                 <li>passage->The book then continues with [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
                 <li>passage->The next [text] has [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
                 <li>passage->What follows is a [text] on [topic_and_detail].</li>
+                <li>passage->[AUTHOR_nameDef] then draws on [topic] to explain [detail] and [detail].</li>
                 <li>passage->The next [text], entitled "[noun_any]," is a [discussion] on [topic_and_detail].</li>
             </rulesStrings>
         </rulePack>
@@ -84,6 +86,7 @@
                 <li>passage->[AUTHOR_nameDef] closes with [topic], [discussing] [detail].</li>
                 <li>passage->The book closes with [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
                 <li>passage->The final [text] has [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
+                <li>passage->The final [text], entitled "[noun_any]," is a [discussion] on [topic_and_detail].</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
