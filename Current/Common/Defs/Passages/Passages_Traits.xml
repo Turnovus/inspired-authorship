@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+    <!-- Common Data -->
+    <RulePackDef>
+        <defName>Turn_Authorship_TraitPassageGeneral</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>topic(p=0.1)->[AUTHOR_possessive] personality</li>
+                <li>topic(p=0.1)->[AUTHOR_possessive] traits</li>
+                <li>topic(p=0.1)->[AUTHOR_possessive] preferences</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <InspiredAuthorship.Passages.PassageDef Name="TraitPassageBase" Abstract="True">
+        <rules>
+            <include>
+                <li>Turn_Authorship_TraitPassageGeneral</li>
+            </include>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+
+    <!-- Nudist -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>TraitNudist</defName>
+
+        <requiresAnyTrait>
+            <li>Nudist</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->nudism</li>
+                <li>topic->[AUTHOR_possessive] nudity</li>
+                <li>topic->being a nudist</li>
+
+                <li>detail->the benefits of nudity</li>
+                <li>detail->the drawbacks of clothing</li>
+                <li>detail->confining garments</li>
+                <li>detail->how [adjective_evil] clothing is</li>
+                <li>detail->the liberty of bare skin</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+    
+</Defs>

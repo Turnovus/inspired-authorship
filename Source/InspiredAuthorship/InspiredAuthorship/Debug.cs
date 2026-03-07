@@ -1,4 +1,5 @@
 using System;
+using InspiredAuthorship.Passages;
 using LudeonTK;
 using Verse;
 
@@ -15,6 +16,13 @@ namespace InspiredAuthorship
                 s += "\n" + BookGenerator.GenerateBookTitle(null);
             }
             Log.Message(s);
+        }
+
+        [DebugOutput("Inspired Authorship")]
+        public static void ReportPassageDefs()
+        {
+            foreach (PassageDef def in DefDatabase<PassageDef>.AllDefsListForReading)
+                def.LogReport();
         }
     }
 }

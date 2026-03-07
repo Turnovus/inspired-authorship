@@ -13,7 +13,13 @@ namespace InspiredAuthorship.Passages
 
         public float CommonalityForInt(Pawn author) => def.baseCommonality;
 
-        public bool CanUseFor(Pawn author) => CanUseForInt(author);
+        public bool CanUseFor(Pawn author)
+        {
+            if (!def.SatisfiesRequiredTraits(author))
+                return false;
+            
+            return CanUseForInt(author);
+        }
 
         protected virtual bool CanUseForInt(Pawn author) => true;
 
@@ -22,7 +28,5 @@ namespace InspiredAuthorship.Passages
             foreach (Rule rule in TaleData_Pawn.GenerateFrom(author).GetRules("AUTHOR", request.Constants))
                 yield return rule;
         }
-        
-        
     }
 }
