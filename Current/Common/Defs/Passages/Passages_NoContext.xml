@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+    <InspiredAuthorship.Passages.PassageDef Name="GenericPassageBase" Abstract="True">
+        <baseCommonality>0.01</baseCommonality>
+    </InspiredAuthorship.Passages.PassageDef>
 
     <!-- Random story -->
-    <InspiredAuthorship.Passages.PassageDef>
+    <InspiredAuthorship.Passages.PassageDef ParentName="GenericPassageBase">
         <defName>RandomStory</defName>
-        <baseCommonality>0.01</baseCommonality>
         <rules>
             <rulesStrings>
                 <li>topic->a [tale_dressed]</li>
@@ -15,9 +17,8 @@
     </InspiredAuthorship.Passages.PassageDef>
 
     <!-- Story with subject -->
-    <InspiredAuthorship.Passages.PassageDef>
+    <InspiredAuthorship.Passages.PassageDef ParentName="GenericPassageBase">
         <defName>RandomStoryWithSubject</defName>
-        <baseCommonality>0.01</baseCommonality>
         <rules>
             <rulesStrings>
                 <li>topic->a [tale_dressed] about [subject]</li>
@@ -32,9 +33,8 @@
     </InspiredAuthorship.Passages.PassageDef>
 
     <!-- Philosophy -->
-    <InspiredAuthorship.Passages.PassageDef>
+    <InspiredAuthorship.Passages.PassageDef ParentName="GenericPassageBase">
         <defName>RandomPhilosophy</defName>
-        <baseCommonality>0.01</baseCommonality>
         <rules>
             <rulesStrings>
                 <li>topic->a [discussion_dressed]</li>
