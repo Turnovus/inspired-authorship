@@ -105,6 +105,8 @@
 
         <maxPassageCount>6</maxPassageCount>
         <idealMinPassageCount>2</idealMinPassageCount>
+
+        <writtenBooksRecord>Turn_Record_BooksWritten</writtenBooksRecord>
     </InspiredAuthorship.ModTuningDef>
 
 </Defs>

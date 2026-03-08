@@ -40,6 +40,8 @@ namespace InspiredAuthorship
         public int maxPassageCount;
         public int idealMinPassageCount;
 
+        public RecordDef writtenBooksRecord;
+
         public float MaxQualityOffset => maxWorkTimeContribution + maxSkillContribution + maxLuckContribution;
     }
 }

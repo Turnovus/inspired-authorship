@@ -79,9 +79,8 @@ namespace InspiredAuthorship
         private static CustomBook GenerateBookInternal(Pawn author, QualityCategory quality)
         {
             ThingDef bookDef = MyDefOf.ModTuning.bookDefs.RandomElement();
-            CustomBook book = ThingMaker.MakeThing(bookDef) as CustomBook;
 
-            if (book == null)
+            if (!(ThingMaker.MakeThing(bookDef) is CustomBook book))
             {
                 Log.Error("Failed to generate book.");
                 return null;
@@ -92,6 +91,8 @@ namespace InspiredAuthorship
             
             book.ForceSetDescription(GenerateBookDescription(author, out string passages));
             book.innerDescription = passages;
+            
+            author.records.Increment(MyDefOf.ModTuning.writtenBooksRecord);
             
             return book;
         }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+    <RecordDef>
+        <defName>Turn_Record_BooksWritten</defName>
+        <label>books written</label>
+        <description>The number of books I have authored after being inspired.</description>
+        <type>Int</type>
+    </RecordDef>
+
+</Defs>
