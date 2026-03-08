@@ -92,5 +92,88 @@
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Abrasive -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitAbrasive</defName>
+
+        <requiresAnyTrait>
+            <li>Abrasive</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->abrasiveness</li>
+                <li>topic->[AUTHOR_possessive] crass demeanor</li>
+                <li>topic->being abrasive</li>
+
+                <li>detail->not caring what others think</li>
+                <li>detail->a list of favorite obsceneties</li>
+                <li>detail->the various annoying qualities of each other [FACTION_pawnSingular]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Too Smart -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitTooSmart</defName>
+
+        <requiresAnyTrait>
+            <li>TooSmart</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->being too smart for [AUTHOR_possessive] own good</li>
+
+                <li>detail->overthinking things</li>
+                <li>detail->needing to know everything</li>
+                <li>detail->a categorical list of everything that could go wrong</li>
+                <li>detail->the dangers of ignorance</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Brawler -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitBrawler</defName>
+
+        <requiresAnyTrait>
+            <li>Brawler</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->brawling</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for [combat_melee]</li>
+                <li>topic->being a brawler</li>
+
+                <li>detail->pointers for [combat_melee]</li>
+                <li>detail->stories of various fights [AUTHOR_pronoun] has been in</li>
+                <li>detail->the joys of [combat_melee]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Masochist -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitMasochist</defName>
+
+        <requiresAnyTrait>
+            <li>Masochist</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->masochism</li>
+                <li>topic->[AUTHOR_possessive] lust for pain</li>
+                <li>topic->being a masochist</li>
+
+                <li>detail->exciting injuries [AUTHOR_pronoun] has incurred</li>
+                <li>detail->[AUTHOR_possessive] [inclination] for pain</li>
+                <li>detail->the most exciting methods of torture</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
     
 </Defs>
