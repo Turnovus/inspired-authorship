@@ -5,6 +5,7 @@ fencing
 fisticuffs
 hand-to-hand combat
 kickboxing
+rough-housing
 slugging
 swordfighting
 wrestling

@@ -78,7 +78,7 @@
         <rules>
             <rulesStrings>
                 <li>topic->cannibalism</li>
-                <li>topic->[AUTHOR_possessive] taste for human flesh</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for human flesh</li>
                 <li>topic->being a cannibal</li>
 
                 <li>detail->how human meat tastes</li>
@@ -166,14 +166,385 @@
         <rules>
             <rulesStrings>
                 <li>topic->masochism</li>
-                <li>topic->[AUTHOR_possessive] lust for pain</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for pain</li>
                 <li>topic->being a masochist</li>
 
                 <li>detail->exciting injuries [AUTHOR_pronoun] has incurred</li>
-                <li>detail->[AUTHOR_possessive] [inclination] for pain</li>
+                <li>detail->[AUTHOR_possessive] [inclination] to be hurt</li>
                 <li>detail->the most exciting methods of torture</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
-    
+
+    <!-- Night Owl -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitNightOwl</defName>
+
+        <requiresAnyTrait>
+            <li>NightOwl</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->staying up late</li>
+                <li>topic->[AUTHOR_possessive] preference for nighttime</li>
+                <li>topic->being a night owl</li>
+
+                <li>detail->the beauty of the night sky</li>
+                <li>detail->feeling groggy during the day</li>
+                <li>detail->[AUTHOR_possessive] [inclination] for the night</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Greedy, Jealous -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitGreedy</defName>
+
+        <requiresAnyTrait>
+            <li>Greedy</li>
+            <li>Jealous</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->greed</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for more</li>
+                <li>topic->being greedy</li>
+
+                <li>detail->why [AUTHOR_pronoun] deserves to have more</li>
+                <li>detail->why [AUTHOR_pronoun] should be allowed to live [AUTHOR_possessive] best life</li>
+                <li>detail->the virtue of greed</li>
+                <li>detail->[bickering] about other [FACTION_pawnsPlural] who have things [AUTHOR_pronoun] wants</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Ascetic -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitAscetic</defName>
+
+        <requiresAnyTrait>
+            <li>Ascetic</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->ascetism</li>
+                <li>topic->[AUTHOR_possessive] ascetic lifestyle</li>
+                <li>topic->being ascetic</li>
+
+                <li>detail->how less is more</li>
+                <li>detail->the virtue in suffering</li>
+                <li>detail->minimalism</li>
+                <li>detail->the rejection of luxuries</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Annoying voice, Creepy breathing, Ugly, Staggeringly ugly -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitUnattractive</defName>
+
+        <requiresAnyTrait>
+            <li>AnnoyingVoice</li>
+            <li>CreepyBreathing</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->[AUTHOR_possessive] unattractive qualities</li>
+                <li>topic->[AUTHOR_possessive] ugliness</li>
+                <li>topic->being unattractive</li>
+
+                <li>detail->how the other [FACTION_pawnsPlural] avoid [AUTHOR_objective]</li>
+                <li>detail->the [strife] of being ugly</li>
+                <li>detail->[AUTHOR_possessive] tragic appearance</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Pyromaniac -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitPyromaniac</defName>
+
+        <requiresAnyTrait>
+            <li>Pyromaniac</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->pyromania</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for fire</li>
+                <li>topic->being a pyromaniac</li>
+
+                <li>detail->cleansing flames</li>
+                <li>detail->the destructive power of fire</li>
+                <li>detail->fire's natural beauty</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Wimp -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitWimp</defName>
+
+        <requiresAnyTrait>
+            <li>Wimp</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->wimping out</li>
+                <li>topic->[AUTHOR_possessive] wimpiness</li>
+                <li>topic->being a wimp</li>
+
+                <li>detail->the many dangers of [LOCATION_planetName]</li>
+                <li>detail->[bickering] about how harsh life on the Rim is</li>
+                <li>detail->how the other [FACTION_pawnsPlural] pick on [AUTHOR_objective]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Undergrounder -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitUndergrounder</defName>
+
+        <requiresAnyTrait>
+            <li>Undergrounder</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->living underground</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for living underground</li>
+                <li>topic->being an undergrounder</li>
+
+                <li>detail->the safety of the underground</li>
+                <li>detail->the horrors of the great outdoors</li>
+                <li>detail->[AUTHOR_possessive] [inclination] for the mines</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Boddy modder -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitTranshumanist</defName>
+
+        <requiresAnyTrait>
+            <li>Transhumanist</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->body modding</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for augmentation</li>
+                <li>topic->being a body modder</li>
+
+                <li>detail->the best augmentations to receive</li>
+                <li>detail->the obselescence of the human body</li>
+                <li>detail->the benefits of bodily augmentation</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Body purist -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitBodyPurist</defName>
+
+        <requiresAnyTrait>
+            <li>BodyPurist</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->bodily purity</li>
+                <li>topic->[AUTHOR_possessive] hatred of augmentation</li>
+                <li>topic->being a body purist</li>
+
+                <li>detail->[AUTHOR_possessive] respect for humanity's natural form</li>
+                <li>detail->the sanctity of the human body</li>
+                <li>detail->the depravity of bodily augmentation</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Misandrist -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitDislikesMen</defName>
+
+        <requiresAnyTrait>
+            <li>DislikesMen</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->misandry</li>
+                <li>topic->[AUTHOR_possessive] hatred of men</li>
+                <li>topic->being a misandrist</li>
+
+                <li>detail->preferring the company of women</li>
+                <li>detail->the [adjective_evil] qualities of all men</li>
+                <li>detail->why [FACTION_name] should not have any male [FACTION_pawnsPlural]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Misogynist -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitDislikesWomen</defName>
+
+        <requiresAnyTrait>
+            <li>DislikesWomen</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->misogyny</li>
+                <li>topic->[AUTHOR_possessive] hatred of women</li>
+                <li>topic->being a misogynist</li>
+
+                <li>detail->preferring the company of men</li>
+                <li>detail->the [adjective_evil] qualities of all women</li>
+                <li>detail->why [FACTION_name] should not have any female [FACTION_pawnsPlural]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Tortured artist -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitTorturedArtist</defName>
+
+        <requiresAnyTrait>
+            <li>TorturedArtist</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->tortured artistry</li>
+                <li>topic->[AUTHOR_possessive] tortured artistry</li>
+                <li>topic->being a tortured artist</li>
+
+                <li>detail->suffering for [AUTHOR_possessive] craft</li>
+                <li>detail->how true art is born from suffering</li>
+                <li>detail->that the other [FACTION_pawnsPlural] don't appreciate [AUTHOR_possessive] vision</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Gourmand -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitGourmand</defName>
+
+        <requiresAnyTrait>
+            <li>Gourmand</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->eating</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for food</li>
+                <li>topic->being a gourmand</li>
+
+                <li>detail->a collection of [PAWN_possessive] favorite [foods]</li>
+                <li>detail->[bickering] about the subpar [foods] at [LOCATION_mapName]</li>
+                <li>detail->[bickering] that [AUTHOR_pronoun] never has enough to eat</li>
+
+                <li>foods->flavors</li>
+                <li>foods->foods</li>
+                <li>foods->meals</li>
+                <li>foods->recipes</li>
+                <li>foods->snacks</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Chemical fascination, Chemical interest -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitDrugDesire</defName>
+
+        <requiresAnyTrait>
+            <DrugDesire>2</DrugDesire>
+            <DrugDesire>1</DrugDesire>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->drugs</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for drugs</li>
+                <li>topic->being a druggie</li>
+
+                <li>detail->the most beneficial types of drugs</li>
+                <li>detail->expanding [AUTHOR_possessive] mind</li>
+                <li>detail->the benefits of a drug-positive lifestyle</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Teetotaler -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitTeetotaler</defName>
+
+        <requiresAnyTrait>
+            <DrugDesire>-1</DrugDesire>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->drug abstinence</li>
+                <li>topic->[AUTHOR_possessive] hatred for drugs</li>
+                <li>topic->being a teetotaler</li>
+
+                <li>detail->the most harmful types of drugs</li>
+                <li>detail->keeping [AUTHOR_possessive] mind clear</li>
+                <li>detail->the benefits of a drug-free lifestyle</li>
+                <li>detail->why drugs are [adjective_evil]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Sanguine, Optimist -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitOptimist</defName>
+
+        <requiresAnyTrait>
+            <NaturalMood>2</NaturalMood>
+            <NaturalMood>1</NaturalMood>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->positivity</li>
+                <li>topic->[AUTHOR_possessive] positive outlook</li>
+                <li>topic->being positive</li>
+
+                <li>detail->why life is so great</li>
+                <li>detail->how wonderful everything is</li>
+                <li>detail->how [adjective_friendly] life is on [LOCATION_planetName]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Depressive, pessimist -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
+        <defName>TraitPessimist</defName>
+
+        <requiresAnyTrait>
+            <NaturalMood>-2</NaturalMood>
+            <NaturalMood>-1</NaturalMood>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->negativity</li>
+                <li>topic->[AUTHOR_possessive] negative outlook</li>
+                <li>topic->being negative</li>
+
+                <li>detail->why life is so miserable</li>
+                <li>detail->how horrible everything is</li>
+                <li>detail->how [adjective_evil] life is on [LOCATION_planetName]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
 </Defs>

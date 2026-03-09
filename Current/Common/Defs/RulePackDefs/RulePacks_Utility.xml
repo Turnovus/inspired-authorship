@@ -35,6 +35,7 @@
                 <li>enemy_broad->InspiredAuthorship/Words/Nouns/EnemyBroad</li>
                 <li>combat_melee->InspiredAuthorship/Words/Nouns/CombatMelee</li>
                 <li>inclination->InspiredAuthorship/Words/Nouns/InclinationFor</li>
+                <li>bickering->InspiredAuthorship/Words/Nouns/Bickering</li>
 
                 <li>adjective_evil->InspiredAuthorship/Words/Adjectives/Evil</li>
                 <li>adjective_story->InspiredAuthorship/Words/Adjectives/Descriptors_Stories</li>
