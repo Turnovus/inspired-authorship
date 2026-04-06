@@ -49,6 +49,9 @@
                 <li>something->[noun_concrete]</li>
                 <li>something->a [adjective_any] [noun_concrete]</li>
                 <li>something->[adjective_any] [noun_concrete]s</li>
+
+                <li>like->[something]</li>
+                <li>dislike->[something]</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
