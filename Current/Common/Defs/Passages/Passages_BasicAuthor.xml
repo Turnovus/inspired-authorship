@@ -42,6 +42,9 @@
                 <li>detail->[subject]</li>
                 <li>detail->[AUTHOR_possessive] interest in [subject]</li>
                 <li>detail->[AUTHOR_possessive] knowledge in [subject]</li>
+
+                <li>like->[passionSkill]</li>
+                <li>like->[subject]</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>

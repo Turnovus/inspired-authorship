@@ -42,6 +42,12 @@
                 <li>detail->confining garments</li>
                 <li>detail->how [adjective_evil] clothing is</li>
                 <li>detail->the liberty of bare skin</li>
+
+                <li>like->the freedom to show [AUTHOR_possessive] body</li>
+                <li>like->feeling the breeze on [AUTHOR_possessive] skin</li>
+
+                <li>dislike->clothing</li>
+                <li>dislike->confining clothes</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -63,6 +69,12 @@
                 <li>detail->proper decorum</li>
                 <li>detail->respecting the feelings of others</li>
                 <li>detail->the importance of politeness</li>
+
+                <li>like->compassion</li>
+                <li>like->cheering up others</li>
+
+                <li>dislike->being cruel</li>
+                <li>dislike->upsetting others</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -89,6 +101,9 @@
                 <li>detail->a ranking of [PAWN_possessive] fellow [FACTION_pawnsPlural] by how tasty they look</li>
 
                 <li MayRequire="Ludeon.RimWorld.Biotech">detail->a ranking of each xenotype by flavor</li>
+
+                <li>like->human meat</li>
+                <li>like->the taste of human meat</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -110,6 +125,12 @@
                 <li>detail->not caring what others think</li>
                 <li>detail->a list of favorite obsceneties</li>
                 <li>detail->the various annoying qualities of each other [FACTION_pawnSingular]</li>
+
+                <li>like->speaking [AUTHOR_possessive] mind</li>
+                <li>like->speaking freely</li>
+
+                <li>dislike->worrying about people's feelings</li>
+                <li>dislike->tone-policing</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -130,6 +151,9 @@
                 <li>detail->needing to know everything</li>
                 <li>detail->a categorical list of everything that could go wrong</li>
                 <li>detail->the dangers of ignorance</li>
+
+                <li>like->studying</li>
+                <li>like->preparing for the worst</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -151,6 +175,11 @@
                 <li>detail->pointers for [combat_melee]</li>
                 <li>detail->stories of various fights [AUTHOR_pronoun] has been in</li>
                 <li>detail->the joys of [combat_melee]</li>
+
+                <li>like->[combat_melee]</li>
+
+                <li>dislike->firearms</li>
+                <li>dislike->ranged weapons</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -172,6 +201,13 @@
                 <li>detail->exciting injuries [AUTHOR_pronoun] has incurred</li>
                 <li>detail->[AUTHOR_possessive] [inclination] to be hurt</li>
                 <li>detail->the most exciting methods of torture</li>
+
+                <li>like->pain</li>
+                <li>like->injury</li>
+                <li>like->suffering</li>
+                <li>like->misery</li>
+
+                <li>dislike->a world without [like]</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -193,6 +229,13 @@
                 <li>detail->the beauty of the night sky</li>
                 <li>detail->feeling groggy during the day</li>
                 <li>detail->[AUTHOR_possessive] [inclination] for the night</li>
+
+                <li>like->staying out late</li>
+                <li>like->sleeping in</li>
+                <li>like->nighttime</li>
+
+                <li>dislike->normal sleeping habits</li>
+                <li>dislike->daytime</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -216,6 +259,16 @@
                 <li>detail->why [AUTHOR_pronoun] should be allowed to live [AUTHOR_possessive] best life</li>
                 <li>detail->the virtue of greed</li>
                 <li>detail->[bickering] about other [FACTION_pawnsPlural] who have things [AUTHOR_pronoun] wants</li>
+
+                <li>like->having more</li>
+                <li>like->wealth</li>
+                <li>like->acquisition</li>
+                <li>like->luxury</li>
+                <li>like->the finer things in life</li>
+
+                <li>dislike->sharing</li>
+                <li>dislike->doing with less</li>
+                <li>dislike->charity</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -238,6 +291,12 @@
                 <li>detail->the virtue in suffering</li>
                 <li>detail->minimalism</li>
                 <li>detail->the rejection of luxuries</li>
+
+                <li>like->simplicity</li>
+                <li>like->doing with less</li>
+
+                <li>dislike->wealth</li>
+                <li>dislike->luxury</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -281,6 +340,15 @@
                 <li>detail->cleansing flames</li>
                 <li>detail->the destructive power of fire</li>
                 <li>detail->fire's natural beauty</li>
+
+                <li>like->fire</li>
+                <li>like->setting things on fire</li>
+                <li>like->things being on fire</li>
+                <li>like->burning things</li>
+
+                <li>dislike->a lack of fire</li>
+                <li>dislike->things not being on fire</li>
+                <li>dislike->putting out fires</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -302,6 +370,14 @@
                 <li>detail->the many dangers of [LOCATION_planetName]</li>
                 <li>detail->[bickering] about how harsh life on the Rim is</li>
                 <li>detail->how the other [FACTION_pawnsPlural] pick on [AUTHOR_objective]</li>
+
+                <li>like->safety</li>
+                <li>like->comfort</li>
+
+                <li>dislike->pain</li>
+                <li>dislike->injury</li>
+                <li>dislike->suffering</li>
+                <li>dislike->misery</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -323,6 +399,15 @@
                 <li>detail->the safety of the underground</li>
                 <li>detail->the horrors of the great outdoors</li>
                 <li>detail->[AUTHOR_possessive] [inclination] for the mines</li>
+
+                <li>like->digging</li>
+                <li>like->tunnels</li>
+                <li>like->caves</li>
+                <li>like->the underground</li>
+
+                <li>dislike->the surface world</li>
+                <li>dislike->sunlight</li>
+                <li>dislike->the sky</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -344,6 +429,15 @@
                 <li>detail->the best augmentations to receive</li>
                 <li>detail->the obselescence of the human body</li>
                 <li>detail->the benefits of bodily augmentation</li>
+
+                <li>like->augmentation</li>
+                <li>like->implants</li>
+                <li>like->cybernetics</li>
+                <li>like->biomodding</li>
+
+                <li>dislike->disease</li>
+                <li>dislike->aging</li>
+                <li>dislike->mortality</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -365,6 +459,15 @@
                 <li>detail->[AUTHOR_possessive] respect for humanity's natural form</li>
                 <li>detail->the sanctity of the human body</li>
                 <li>detail->the depravity of bodily augmentation</li>
+
+                <li>like->purity</li>
+                <li>like->sanctity</li>
+                <li>like->the beauty of the human form</li>
+
+                <li>dislike->augmentation</li>
+                <li>dislike->implants</li>
+                <li>dislike->cybernetics</li>
+                <li>dislike->biomodding</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -386,6 +489,10 @@
                 <li>detail->preferring the company of women</li>
                 <li>detail->the [adjective_evil] qualities of all men</li>
                 <li>detail->why [FACTION_name] should not have any male [FACTION_pawnsPlural]</li>
+
+                <li>like->women</li>
+
+                <li>dislike->men</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -407,6 +514,10 @@
                 <li>detail->preferring the company of men</li>
                 <li>detail->the [adjective_evil] qualities of all women</li>
                 <li>detail->why [FACTION_name] should not have any female [FACTION_pawnsPlural]</li>
+
+                <li>like->men</li>
+
+                <li>dislike->women</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -428,6 +539,12 @@
                 <li>detail->suffering for [AUTHOR_possessive] craft</li>
                 <li>detail->how true art is born from suffering</li>
                 <li>detail->that the other [FACTION_pawnsPlural] don't appreciate [AUTHOR_possessive] vision</li>
+
+                <li>like->art</li>
+                <li>like->expression</li>
+
+                <li>dislike->existence</li>
+                <li>dislike->the dullness of reality</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -449,6 +566,13 @@
                 <li>detail->a collection of [PAWN_possessive] favorite [foods]</li>
                 <li>detail->[bickering] about the subpar [foods] at [LOCATION_mapName]</li>
                 <li>detail->[bickering] that [AUTHOR_pronoun] never has enough to eat</li>
+
+                <li>like->[foods]</li>
+                <li>like->eating</li>
+                <li>like->gorging on [foods]</li>
+
+                <li>dislike->hunger</li>
+                <li>dislike->dieting</li>
 
                 <li>foods->flavors</li>
                 <li>foods->foods</li>
@@ -477,6 +601,12 @@
                 <li>detail->the most beneficial types of drugs</li>
                 <li>detail->expanding [AUTHOR_possessive] mind</li>
                 <li>detail->the benefits of a drug-positive lifestyle</li>
+
+                <li>like->drugs</li>
+                <li>like->getting high</li>
+                <li>like->mind-altering chemicals</li>
+
+                <li>dislike->sobriety</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -499,6 +629,13 @@
                 <li>detail->keeping [AUTHOR_possessive] mind clear</li>
                 <li>detail->the benefits of a drug-free lifestyle</li>
                 <li>detail->why drugs are [adjective_evil]</li>
+
+                <li>like->sobriety</li>
+                <li>like->having a clear mind</li>
+
+                <li>dislike->drugs</li>
+                <li>dislike->getting high</li>
+                <li>dislike->mind-altering chemicals</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -521,6 +658,14 @@
                 <li>detail->why life is so great</li>
                 <li>detail->how wonderful everything is</li>
                 <li>detail->how [adjective_friendly] life is on [LOCATION_planetName]</li>
+
+                <li>like->life</li>
+                <li>like->being happy</li>
+                <li>like->looking on the bright side</li>
+
+                <li>dislike->stress</li>
+                <li>dislike->being miserable</li>
+                <li>dislike->worrying about everything</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -543,6 +688,14 @@
                 <li>detail->why life is so miserable</li>
                 <li>detail->how horrible everything is</li>
                 <li>detail->how [adjective_evil] life is on [LOCATION_planetName]</li>
+
+                <li>like->stress</li>
+                <li>like->being miserable</li>
+                <li>like->worrying about everything</li>
+
+                <li>dislike->life</li>
+                <li>dislike->being happy</li>
+                <li>dislike->looking on the bright side</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>

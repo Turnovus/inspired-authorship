@@ -112,6 +112,14 @@
             <li>topic</li>
             <li>detail</li>
             <li>period</li>
+            <li>trial</li>
+            <li>triumph</li>
+            <li>risk</li>
+            <li>reward</li>
+            <li>like</li>
+            <li>dislike</li>
+            <li>drawback</li>
+            <li>benefit</li>
         </passageRules>
     </InspiredAuthorship.ModTuningDef>
 
