@@ -51,7 +51,7 @@
                 <li>Turn_Authorship_PassageUtility</li>
             </include>
             <rulesStrings>
-                <li>passage->[passage_open]</li>
+                <li>passage(p=0.01)->[passage_open]</li>
                 <li>passage(numRules>2)->[passage_open] [passage_middle]</li>
                 <li>passage(numRules>4)->[passage_open] [passage_middle] [passage_end]</li>
                 <li>passage(numRules>2)->[passage_open] [passage_end]</li>
@@ -69,7 +69,7 @@
 
                 <li>passage_end->[AUTHOR_nameDef] ties it together with [passage_content].</li>
 
-                <li>passage_content(has_topic==true, has_detail==true, uses=1)->[passage_topic_detail_part]</li>
+                <li>passage_content(has_topic==true, has_detail==true, uses=1, p=10)->[passage_topic_detail_part]</li>
                 <li>passage_content(has_period==true, uses=1)->the events that took place during [period]</li>
                 <li>passage_content(has_like==true, uses=1)->a word of appreciation for [like]</li>
                 <li>passage_content(has_dislike==true, uses=1)->a word of disdain for [dislike]</li>

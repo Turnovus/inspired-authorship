@@ -35,15 +35,35 @@
         <workerClass>InspiredAuthorship.Passages.PassageWorker_SkillPassion</workerClass>
         <rules>
             <rulesStrings>
-                <li>topic(p=4)->[AUTHOR_possessive] passion for [passionSkill]</li>
-                <li>topic->a [discussion] about [passionSkill] work</li>
-                <li>topic->[passionSkill] work</li>
+                <li>topic(p=4)->[AUTHOR_possessive] passion for [AUTHOR_skill]</li>
+                <li>topic->a [discussion] about [AUTHOR_skill] work</li>
+                <li>topic->[AUTHOR_skill] work</li>
 
                 <li>detail->[subject]</li>
                 <li>detail->[AUTHOR_possessive] interest in [subject]</li>
                 <li>detail->[AUTHOR_possessive] knowledge in [subject]</li>
 
-                <li>like->[passionSkill]</li>
+                <li>like->[AUTHOR_skill]</li>
+                <li>like->[subject]</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+
+    <!-- Author's skill mastery (level 14+) -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>AuthorMastery</defName>
+        <workerClass>InspiredAuthorship.Passages.PassageWorker_SkillMastery</workerClass>
+        <rules>
+            <rulesStrings>
+                <li>topic->[AUTHOR_possessive] mastery of [AUTHOR_skill]</li>
+                <li>topic->mastering [AUTHOR_skill]</li>
+
+                <li>detail->[subject]</li>
+                <li>detail->[AUTHOR_possessive] peerless knowledge of [subject]</li>
+                <li>detail->[AUTHOR_possessive] unrivaled aptitude for [subject]</li>
+
+                <li>like->[AUTHOR_skill]</li>
                 <li>like->[subject]</li>
             </rulesStrings>
         </rules>
