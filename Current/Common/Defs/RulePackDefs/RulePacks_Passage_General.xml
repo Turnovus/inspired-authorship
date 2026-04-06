@@ -51,12 +51,30 @@
                 <li>Turn_Authorship_PassageUtility</li>
             </include>
             <rulesStrings>
-                <li>passage(has_topic==true, has_detail==true)->[AUTHOR_nameDef] [proceeds] with [topic], [discussing] [detail].</li>
-                <li>passage(has_topic==true, has_detail==true)->The book [proceeds] with [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
-                <li>passage(has_topic==true, has_detail==true)->The [ordinal] [text] has [AUTHOR_nameDef] [discussing] [topic_and_detail].</li>
-                <li>passage(has_topic==true, has_detail==true)->The [ordinal] [text], entitled "[noun_any]," is a [discussion] on [topic_and_detail].</li>
-                <li>passage(has_topic==true, has_detail==true)->[AUTHOR_nameDef] [periodically] draws on [topic] to explain [detail] and [detail].</li>
-                <li>passage(has_topic==true, has_detail==true, has_period==true)->The [ordinal] [text], set during [period], is focused on [topic].</li>
+                <li>passage->[passage_open]</li>
+                <li>passage(numRules>2)->[passage_open] [passage_middle]</li>
+                <li>passage(numRules>4)->[passage_open] [passage_middle] [passage_end]</li>
+                <li>passage(numRules>2)->[passage_open] [passage_end]</li>
+
+                <!-- <li>passage(has_topic==true, has_detail==true)->[AUTHOR_nameDef] [periodically] draws on [topic] to explain [detail] and [detail].</li> -->
+
+                <li>passage_open->[AUTHOR_nameDef] [proceeds] with [passage_content].</li>
+                <li>passage_open->The book [proceeds] with [passage_content].</li>
+                <li>passage_open->The [ordinal] [text] has [passage_content].</li>
+                <li>passage_open->The [ordinal] [text], entitled "[noun_any]," has [passage_content].</li>
+                <li>passage_open(has_topic==true, has_detail==true, has_period==true)->The [ordinal] [text], set during [period], is focused on [passage_content].</li>
+
+                <li>passage_middle->In particular, [AUTHOR_pronoun] highlights [passage_content].</li>
+
+                <li>passage_end->[AUTHOR_nameDef] ties it together with [passage_content].</li>
+
+                <li>passage_content(has_topic==true, has_detail==true, uses=1)->[passage_topic_detail_part]</li>
+                <li>passage_content(has_period==true, uses=1)->the events that took place during [period]</li>
+
+                <li>passage_topic_detail_part->[topic], [discussing] [detail]</li>
+                <li>passage_topic_detail_part->[topic_and_detail]</li>
+                <li>passage_topic_detail_part->[AUTHOR_nameDef] [discussing] [topic_and_detail]</li>
+                <li>passage_topic_detail_part->a [discussion] on [topic_and_detail]</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
