@@ -353,12 +353,13 @@
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
 
-    <!-- Wimp -->
+    <!-- Wimp, Delicate -->
     <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase">
         <defName>TraitWimp</defName>
 
         <requiresAnyTrait>
             <li>Wimp</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">Delicate</li>
         </requiresAnyTrait>
 
         <rules>
@@ -696,6 +697,36 @@
                 <li>dislike->life</li>
                 <li>dislike->being happy</li>
                 <li>dislike->looking on the bright side</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+    <!-- Recluse -->
+    <InspiredAuthorship.Passages.PassageDef ParentName="TraitPassageBase" MayRequire="Ludeon.RimWorld.Biotech">
+        <defName>TraitRecluse</defName>
+
+        <requiresAnyTrait>
+            <li>Recluse</li>
+        </requiresAnyTrait>
+
+        <rules>
+            <rulesStrings>
+                <li>topic->solitude</li>
+                <li>topic->being left alone</li>
+                <li>topic->reclusiveness</li>
+
+                <li>detail->why [AUTHOR_pronoun] prefers to be left alone</li>
+                <li>detail->why being alone doesn't really bother [AUTHOR_objective]</li>
+                <li>detail->not being able to connect with others</li>
+
+                <li>like->solitude</li>
+                <li>like->quiet</li>
+                <li>like->being alone</li>
+
+                <li>dislike->friends</li>
+                <li>dislike->company</li>
+                <li>dislike->socializing</li>
+                <li>dislike->having a social life</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
