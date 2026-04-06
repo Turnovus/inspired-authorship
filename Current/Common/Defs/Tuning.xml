@@ -107,6 +107,12 @@
         <idealMinPassageCount>2</idealMinPassageCount>
 
         <writtenBooksRecord>Turn_Record_BooksWritten</writtenBooksRecord>
+
+        <passageRules>
+            <li>topic</li>
+            <li>detail</li>
+            <li>period</li>
+        </passageRules>
     </InspiredAuthorship.ModTuningDef>
 
 </Defs>

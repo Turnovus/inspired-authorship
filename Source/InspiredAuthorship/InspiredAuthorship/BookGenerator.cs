@@ -162,6 +162,10 @@ namespace InspiredAuthorship
                 {
                     GrammarRequest request =
                         PassageGenerator.GetRandomGrammarFor(author, usedPassages, out PassageDef passage);
+
+                    foreach (string rule in MyDefOf.ModTuning.passageRules)
+                        request.Constants["has_" + rule] = request.HasRule(rule).ToString();
+                    
                     usedPassages.Add(passage);
                     requests.Add(request);
                 }
