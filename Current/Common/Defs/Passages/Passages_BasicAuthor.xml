@@ -65,6 +65,15 @@
 
                 <li>like->[AUTHOR_skill]</li>
                 <li>like->[subject]</li>
+
+                <li>trial->nights of ceaseless study</li>
+                <li>trial->hard work and determination</li>
+                <li>trial->devotion to [AUTHOR_possessive] craft</li>
+
+                <li>reward->mastery of [AUTHOR_skill]</li>
+                <li>reward->a deeper understanding of [AUTHOR_skill]</li>
+                <li>reward->knowledge of [subject]</li>
+                <li>reward->peerless [AUTHOR_skill] skill</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>

@@ -48,6 +48,14 @@
 
                 <li>dislike->clothing</li>
                 <li>dislike->confining clothes</li>
+
+                <li>risk->ridicule</li>
+                <li>risk->public scorn</li>
+                <li>risk->embarrassment</li>
+                <li>risk->the cold</li>
+
+                <li>reward->freedom</li>
+                <li>reward->self-expression</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -75,6 +83,10 @@
 
                 <li>dislike->being cruel</li>
                 <li>dislike->upsetting others</li>
+
+                <li>reward->friends</li>
+                <li>reward->a good feeling</li>
+                <li>reward->making a positive impact</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -104,6 +116,13 @@
 
                 <li>like->human meat</li>
                 <li>like->the taste of human meat</li>
+
+                <li>risk->food that fights back</li>
+                <li>risk->social scorn</li>
+                <li>risk->disturbing others</li>
+
+                <li>reward->succulent flesh</li>
+                <li>reward->manpork</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -131,6 +150,14 @@
 
                 <li>dislike->worrying about people's feelings</li>
                 <li>dislike->tone-policing</li>
+
+                <li>risk->hurting others' feelings</li>
+                <li>risk->upsetting people</li>
+                <li>risk->coming across as rude</li>
+
+                <li>reward->free speech</li>
+                <li>reward->saying what's on [AUTHOR_possessive] mind</li>
+                <li>reward->getting things off of [AUTHOR_possessive] chest.</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -180,6 +207,14 @@
 
                 <li>dislike->firearms</li>
                 <li>dislike->ranged weapons</li>
+
+                <li>risk->walking into crossfire</li>
+                <li>risk->running into danger</li>
+                <li>risk->getting up-close and personal</li>
+
+                <li>reward->the rush of combat</li>
+                <li>reward->a fair battle</li>
+                <li>reward->the clashing of blades</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -208,6 +243,14 @@
                 <li>like->misery</li>
 
                 <li>dislike->a world without [like]</li>
+
+                <li>risk->breaking something</li>
+                <li>risk->losing an arm</li>
+                <li>risk->getting blood everywhere</li>
+
+                <li>reward->pleasure</li>
+                <li>reward->ecstasy</li>
+                <li>reward->soothing [like]</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -236,6 +279,11 @@
 
                 <li>dislike->normal sleeping habits</li>
                 <li>dislike->daytime</li>
+
+                <li>risk->sleeping through the day</li>
+                <li>risk->the dark of night</li>
+
+                <li>reward->restful sleep</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -269,6 +317,13 @@
                 <li>dislike->sharing</li>
                 <li>dislike->doing with less</li>
                 <li>dislike->charity</li>
+
+                <li>risk->jealous looks</li>
+                <li>risk->insults from [AUTHOR_possessive] lessers</li>
+
+                <li>reward->luxury</li>
+                <li>reward->the good life</li>
+                <li>reward->wealth and status</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -297,6 +352,13 @@
 
                 <li>dislike->wealth</li>
                 <li>dislike->luxury</li>
+
+                <li>risk->hunger</li>
+                <li>risk->poverty</li>
+                <li>risk->confused looks from others</li>
+
+                <li>reward->satisfaction</li>
+                <li>reward->a simpler way of life</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -319,6 +381,9 @@
                 <li>detail->how the other [FACTION_pawnsPlural] avoid [AUTHOR_objective]</li>
                 <li>detail->the [strife] of being ugly</li>
                 <li>detail->[AUTHOR_possessive] tragic appearance</li>
+
+                <li>risk->disguted looks</li>
+                <li>risk->social distance</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -349,6 +414,15 @@
                 <li>dislike->a lack of fire</li>
                 <li>dislike->things not being on fire</li>
                 <li>dislike->putting out fires</li>
+
+                <li>risk->being burned alive</li>
+                <li>risk->everything going up in flames</li>
+                <li>risk->burn wounds</li>
+
+                <li>reward->the comforting heat</li>
+                <li>reward->the beauty of fire</li>
+                <li>reward->the awesome power of an inferno</li>
+                <li>reward->mastery of flame</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -379,6 +453,15 @@
                 <li>dislike->injury</li>
                 <li>dislike->suffering</li>
                 <li>dislike->misery</li>
+
+                <li>risk->being treated like a wimp</li>
+                <li>risk->giving up</li>
+                <li>risk->giving in to pain</li>
+                <li>risk->coming across as spineless</li>
+
+                <li>reward->safety</li>
+                <li>reward->living another day</li>
+                <li>reward->avoiding conflict</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -409,6 +492,14 @@
                 <li>dislike->the surface world</li>
                 <li>dislike->sunlight</li>
                 <li>dislike->the sky</li>
+
+                <li>risk->cave-ins</li>
+                <li>risk->the darkness of the depths</li>
+                <li>risk->giant killer insectoids</li>
+
+                <li>reward->the comfort of the depths</li>
+                <li>reward->a home underground</li>
+                <li>reward->the comforting embrace of the ground</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -439,6 +530,14 @@
                 <li>dislike->disease</li>
                 <li>dislike->aging</li>
                 <li>dislike->mortality</li>
+
+                <li>risk->botched surgery</li>
+                <li>risk->cybernetics malfunctions</li>
+                <li>risk->the cost of bionics</li>
+
+                <li>reward->superhuman abilities</li>
+                <li>reward->escape from mortality</li>
+                <li>reward->a connection with technology</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -469,6 +568,14 @@
                 <li>dislike->implants</li>
                 <li>dislike->cybernetics</li>
                 <li>dislike->biomodding</li>
+
+                <li>risk->disease</li>
+                <li>risk->mortality</li>
+                <li>risk->injury</li>
+                <li>risk->missing limbs</li>
+
+                <li>reward->honoring [AUTHOR_possessive] body</li>
+                <li>reward->a pure body</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -546,6 +653,13 @@
 
                 <li>dislike->existence</li>
                 <li>dislike->the dullness of reality</li>
+
+                <li>risk->going mad</li>
+                <li>risk->losing control</li>
+                <li>risk->letting [AUTHOR_possessive] feelings out</li>
+
+                <li>reward->creating a masterpiece</li>
+                <li>reward->expressing [AUTHOR_objective]self</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
@@ -574,6 +688,13 @@
 
                 <li>dislike->hunger</li>
                 <li>dislike->dieting</li>
+
+                <li>risk->overeating</li>
+                <li>risk->running out of food</li>
+                <li>risk->getting food poisoning</li>
+
+                <li>reward->the joy of eating</li>
+                <li>reward->delicious [foods]</li>
 
                 <li>foods->flavors</li>
                 <li>foods->foods</li>
@@ -608,6 +729,13 @@
                 <li>like->mind-altering chemicals</li>
 
                 <li>dislike->sobriety</li>
+
+                <li>risk->overdosing</li>
+                <li>risk->addiction</li>
+                <li>risk->the cost of drugs</li>
+
+                <li>reward->chemical bliss</li>
+                <li>reward->a good rush</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>

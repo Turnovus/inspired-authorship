@@ -13,12 +13,17 @@
                 <li>middle_book_description->It [book_description]</li>
 
                 <li>book_description->is crudely bound with [bindings]</li>
+                <li>book_description->has a crude cover made from [cover_material]</li>
+                <li>book_description->has a crude [cover_material] cover bound with [bindings]</li>
 
                 <li>start_creation_details->This book was [creation_details]</li>
 
                 <li>middle_creation_details->It was [creation details]</li>
 
                 <li>creation_details->written on the planet [LOCATION_planetName] by [AUTHOR_nameFull] on the [creationDate]</li>
+                <li>creation_details->written by [AUTHOR_nameFull] on the planet [LOCATION_planetName] on the [creationDate]</li>
+                <li>creation_details->written on the [creationDate] by [AUTHOR_nameFull] on the planet [LOCATION_planetName]</li>
+                <li>creation_details->written on the [creationDate] on the planet [LOCATION_planetName] by [AUTHOR_nameFull]</li>
 
                 <li>bindings->string</li>
                 <li>bindings->tape</li>
@@ -26,6 +31,11 @@
                 <li>bindings->leather straps</li>
                 <li>bindings->nails</li>
                 <li>bindings->glue</li>
+
+                <li>cover_material->leather</li>
+                <li>cover_material->wood planks</li>
+                <li>cover_material->cardboard</li>
+                <li>cover_material->sheet metal</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
@@ -68,12 +78,18 @@
                 <li>passage_middle->[AUTHOR_nameDef] draws on [passage_content].</li>
 
                 <li>passage_end->[AUTHOR_nameDef] ties it together with [passage_content].</li>
-
-                <li>passage_content(has_topic==true, has_detail==true, uses=1, p=10)->[passage_topic_detail_part]</li>
+                <li>passage_end->The closing remark is [passage_content].</li>
+                
                 <li>passage_content(has_period==true, uses=1)->the events that took place during [period]</li>
                 <li>passage_content(has_like==true, uses=1)->a word of appreciation for [like]</li>
                 <li>passage_content(has_dislike==true, uses=1)->a word of disdain for [dislike]</li>
+                <!-- <li>passage_content(has_risk==true, uses=1)->the [risk] [AUTHOR_pronoun] faces</li> risk->hardship? -->
+
+                <li>passage_content(has_topic==true, has_detail==true, uses=1, p=10)->[passage_topic_detail_part]</li>
                 <li>passage_content(has_like==true, has_dislike==true, uses=1)->[passage_like_dislike_part]</li>
+                <li>passage_content(has_risk==true, has_reward==true, uses=1)->[passage_risk_reward_part]</li>
+                <li>passage_content(has_trial==true, has_reward==true, uses=1)->[passage_trial_reward_part]</li>
+                <li>passage_content(has_like==true, has_trial==true, uses=1)->[passage_like_trial_reward_part]</li>
 
                 <li>passage_topic_detail_part->[topic], [discussing] [detail]</li>
                 <li>passage_topic_detail_part->[topic_and_detail]</li>
@@ -83,6 +99,16 @@
                 <li>passage_like_dislike_part->why [like] is superior to [dislike]</li>
                 <li>passage_like_dislike_part->how [dislike] cannot compare to [like]</li>
                 <li>passage_like_dislike_part->an analysis of [dislike] as opposed to [like], and why the latter comes out on top.</li>
+
+                <li>passage_risk_reward_part->why [reward] is worth [risk]</li>
+                <li>passage_risk_reward_part->how enduring [risk] can lead to [reward]</li>
+                <li>passage_risk_reward_part->a justification for why the risk of [risk] is worth the reward of [reward]</li>
+                <li>passage_risk_reward_part->how [risk] brings [AUTHOR_objective] closer to [reward]</li>
+
+                <li>passage_trial_reward_part->how [reward] is worth [trial]</li>
+                <li>passage_trial_reward_part->how [trial] has lead to [reward]</li>
+
+                <li>passage_like_trial_part->how [AUTHOR_possessive] [inclination] for [like] leads [AUTHOR_objective] to endure [trial]</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>

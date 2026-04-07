@@ -20,6 +20,9 @@
                 <li>dislike->[otherFaction_name]</li>
                 <li>dislike->[otherFaction_pawnsPlural]</li>
 
+                <li>risk->being raided by [otherFaction_pawnsPlural]</li>
+                <li>risk->fighting off [otherFaction_pawnsPlural]</li>
+
                 <li>enemyFaction->[otherFaction_defLabel]</li>
                 <li>enemyFaction->[adjective_evil] [otherFaction_defLabel]</li>
                 <li>enemyFaction->[adjective_evil] [enemy_broad]</li>
@@ -49,6 +52,12 @@
 
                 <li>friendlyFaction->[otherFaction_defLabel]</li>
                 <li>friendlyFaction->[adjective_friendly] [otherFaction_defLabel]</li>
+
+                <li>trial->earning trust</li>
+                <li>trial->improving relations</li>
+
+                <li>reward->having an ally to call upon</li>
+                <li>reward->having friends on this cruel world</li>
             </rulesStrings>
         </rules>
     </InspiredAuthorship.Passages.PassageDef>

@@ -109,15 +109,15 @@
         <writtenBooksRecord>Turn_Record_BooksWritten</writtenBooksRecord>
 
         <passageRules>
-            <li>topic</li>
-            <li>detail</li>
-            <li>period</li>
-            <li>trial</li>
+            <li>topic</li> <!-- What the passage is broadly about -->
+            <li>detail</li> <!-- What the passage is specifically about -->
+            <li>period</li> <!-- When the passage takes place -->
+            <li>trial</li> <!-- A specific hardship endured by the author -->
             <li>triumph</li>
-            <li>risk</li>
-            <li>reward</li>
-            <li>like</li>
-            <li>dislike</li>
+            <li>risk</li> <!-- A general hazard associated with the subject -->
+            <li>reward</li> <!-- A general boon associated with the subject -->
+            <li>like</li> <!-- Something the author positively associates with the passage -->
+            <li>dislike</li> <!-- Something the author negatively associates with the passage -->
             <li>drawback</li>
             <li>benefit</li>
         </passageRules>
