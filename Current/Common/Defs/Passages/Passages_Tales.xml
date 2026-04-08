@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Random tale concerning the author, with valid def extension -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>AuthorTale</defName>
+        <workerClass>InspiredAuthorship.Passages.PassageWorker_AuthorTale</workerClass>
+        <rules>
+            <rulesStrings>
+                <li>topic->[tale_noun]</li>
+                <li>detail->[image]</li>
+
+                <!-- Required by the image rule of most tales -->
+                <li>circumstance_group->[circumstance_phrase]</li>
+
+                <li>required_postfix->This passage refers to [tale_noun] on [DATE].</li>
+                <li>required_postfix->This passage relates to [tale_noun] on [DATE].</li>
+                <li>required_postfix->This passage tells the story of [tale_noun] on [DATE].</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
+</Defs>

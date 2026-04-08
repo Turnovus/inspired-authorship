@@ -172,6 +172,9 @@ namespace InspiredAuthorship
                         request.Constants["has_" + rule] = hasRule.ToString();
                     }
 
+                    string postfixKey = MyDefOf.ModTuning.requiredPostfixRuleKey;
+                    request.Constants["has_" + postfixKey] = request.HasRule(postfixKey).ToString();
+
                     request.Constants["numRules"] = numRules.ToString();
                     
                     usedPassages.Add(passage);

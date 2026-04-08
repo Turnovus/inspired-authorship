@@ -61,12 +61,15 @@
                 <li>Turn_Authorship_PassageUtility</li>
             </include>
             <rulesStrings>
-                <li>passage(p=0.01)->[passage_open]</li>
-                <li>passage(numRules>2)->[passage_open] [passage_middle]</li>
-                <li>passage(numRules>4)->[passage_open] [passage_middle] [passage_end]</li>
-                <li>passage(numRules>2)->[passage_open] [passage_end]</li>
+                <li>passage(has_required_postfix==true)->[passage_main] [required_postfix]</li>
+                <li>passage(has_required_postfix!=true)->[passage_main]</li>
 
-                <!-- <li>passage(has_topic==true, has_detail==true)->[AUTHOR_nameDef] [periodically] draws on [topic] to explain [detail] and [detail].</li> -->
+                <li>passage_main(p=0.01)->[passage_open]</li>
+                <li>passage_main(numRules>2)->[passage_open] [passage_middle]</li>
+                <li>passage_main(numRules>4)->[passage_open] [passage_middle] [passage_end]</li>
+                <li>passage_main(numRules>2)->[passage_open] [passage_end]</li>
+
+                <!-- <li>passage_main(has_topic==true, has_detail==true)->[AUTHOR_nameDef] [periodically] draws on [topic] to explain [detail] and [detail].</li> -->
 
                 <li>passage_open->[AUTHOR_nameDef] [proceeds] with [passage_content].</li>
                 <li>passage_open->The book [proceeds] with [passage_content].</li>

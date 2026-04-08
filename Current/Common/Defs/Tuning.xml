@@ -121,6 +121,9 @@
             <li>drawback</li>
             <li>benefit</li>
         </passageRules>
+
+        <!-- The below rule keys need to be tracked seperately so that they don't count towards numRules -->
+        <requiredPostfixRuleKey>required_postfix</requiredPostfixRuleKey>
     </InspiredAuthorship.ModTuningDef>
 
 </Defs>

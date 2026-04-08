@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TaleDef[defName="LandedInPod"]</xpath>
+        <value>
+            <li Class="InspiredAuthorship.Passages.ModExtension_TaleRules">
+                <rules/>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

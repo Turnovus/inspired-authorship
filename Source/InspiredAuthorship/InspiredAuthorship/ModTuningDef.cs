@@ -43,6 +43,7 @@ namespace InspiredAuthorship
         public RecordDef writtenBooksRecord;
 
         public List<string> passageRules = new List<string>();
+        public string requiredPostfixRuleKey;
 
         public float MaxQualityOffset => maxWorkTimeContribution + maxSkillContribution + maxLuckContribution;
     }
