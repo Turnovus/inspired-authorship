@@ -13,6 +13,8 @@
                 <!-- Required by the image rule of most tales -->
                 <li>circumstance_group->[circumstance_phrase]</li>
 
+                <li>illustration->[image]. [desc_sentence]</li>
+
                 <li>required_postfix->This passage refers to [tale_noun] on [DATE].</li>
                 <li>required_postfix->This passage relates to [tale_noun] on [DATE].</li>
                 <li>required_postfix->This passage tells the story of [tale_noun] on [DATE].</li>

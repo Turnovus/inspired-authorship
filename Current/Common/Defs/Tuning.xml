@@ -120,6 +120,8 @@
             <li>dislike</li> <!-- Something the author negatively associates with the passage -->
             <li>drawback</li>
             <li>benefit</li>
+            <li>illustration</li> <!-- Description of a graphical image related to the passage -->
+            <li>illustration_detail</li> <!-- Optional details for illustrations -->
         </passageRules>
 
         <!-- The below rule keys need to be tracked seperately so that they don't count towards numRules -->

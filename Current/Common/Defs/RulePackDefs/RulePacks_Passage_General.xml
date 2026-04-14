@@ -87,6 +87,7 @@
                 <li>passage_content(has_like==true, uses=1)->a word of appreciation for [like]</li>
                 <li>passage_content(has_dislike==true, uses=1)->a word of disdain for [dislike]</li>
                 <!-- <li>passage_content(has_risk==true, uses=1)->the [risk] [AUTHOR_pronoun] faces</li> risk->hardship? -->
+                <li>passage_content(has_illustration==true, uses=1)->a [picture] of [illustration]</li>
 
                 <li>passage_content(has_topic==true, has_detail==true, uses=1, p=10)->[passage_topic_detail_part]</li>
                 <li>passage_content(has_like==true, has_dislike==true, uses=1)->[passage_like_dislike_part]</li>
