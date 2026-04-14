@@ -195,8 +195,8 @@ namespace InspiredAuthorship
                     else
                         rulePackDef = MyDefOf.ModTuning.passageMiddleRules;
                     request.Includes.Add(rulePackDef);
-                    
-                    description += GrammarResolver.Resolve("passage", request);
+
+                    description += ResolvePassageGrammar(request);
 
                     if (i < maxPassages - 1)
                         description += "\n\n";
@@ -206,6 +206,21 @@ namespace InspiredAuthorship
             }
             
             return description.StripTags();
+        }
+
+        private static string ResolvePassageGrammar(GrammarRequest request)
+        {
+            string passage = GrammarResolver.Resolve("passage", request);
+            return SanitizePassage(passage);
+        }
+
+        private static string SanitizePassage(string passageString)
+        {
+            passageString = passageString.Replace("..", ".");
+            // Add an escape character so we can break up non-sanitary sequences. Useful if we want to add ellipses to a
+            // passage.
+            passageString = passageString.Replace("\\", "");
+            return passageString;
         }
 
         public static IEnumerable<Rule> RulesForLocation(string prefix, Pawn pawn)
