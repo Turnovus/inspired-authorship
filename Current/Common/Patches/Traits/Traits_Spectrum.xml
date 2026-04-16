@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!--
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName="DefName"]</xpath>
+        <value>
+            <li Class="InspiredAuthorship.Passages.ModExtension_TraitRules">
+                <rulesByDegree>
+                    <li>
+                        <degree>1</degree>
+                        <rules>
+                        </rules>
+                    </li>
+                </rulesByDegree>
+            </li>
+        </value>
+    </Operation>
+-->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName="DrugDesire"]</xpath>
+        <value>
+            <li Class="InspiredAuthorship.Passages.ModExtension_TraitRules">
+                <rulesByDegree>
+                    <li>
+                        <degree>-1</degree>
+                        <rules>
+                            <rulesStrings>
+                                <li>topic->drug abstinence</li>
+                                <li>topic->[AUTHOR_possessive] hatred for drugs</li>
+                                <li>topic->being a teetotaler</li>
+
+                                <li>detail->the most harmful types of drugs</li>
+                                <li>detail->keeping [AUTHOR_possessive] mind clear</li>
+                                <li>detail->the benefits of a drug-free lifestyle</li>
+                                <li>detail->why drugs are [adjective_evil]</li>
+
+                                <li>like->sobriety</li>
+                                <li>like->having a clear mind</li>
+
+                                <li>dislike->drugs</li>
+                                <li>dislike->getting high</li>
+                                <li>dislike->mind-altering chemicals</li>
+                            </rulesStrings>
+                        </rules>
+                    </li>
+
+                    <li>
+                        <degree>1</degree>
+                        <rules>
+                            <include>
+                                <li>Turn_Authorship_DrugDesireTraitRules</li>
+                            </include>
+                        </rules>
+                    </li>
+
+                    <li>
+                        <degree>2</degree>
+                        <rules>
+                            <include>
+                                <li>Turn_Authorship_DrugDesireTraitRules</li>
+                            </include>
+                        </rules>
+                    </li>
+                </rulesByDegree>
+            </li>
+        </value>
+    </Operation>
+
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName="NaturalMood"]</xpath>
+        <value>
+            <li Class="InspiredAuthorship.Passages.ModExtension_TraitRules">
+                <rulesByDegree>
+                    <li>
+                        <degree>-2</degree>
+                        <rules>
+                            <include>
+                                <li>Turn_Authorship_PessimistTraitRules</li>
+                            </include>
+                        </rules>
+                    </li>
+
+                    <li>
+                        <degree>-1</degree>
+                        <rules>
+                            <include>
+                                <li>Turn_Authorship_PessimistTraitRules</li>
+                            </include>
+                        </rules>
+                    </li>
+
+                    <li>
+                        <degree>1</degree>
+                        <rules>
+                            <include>
+                                <li>Turn_Authorship_OptimistTraitRules</li>
+                            </include>
+                        </rules>
+                    </li>
+
+                    <li>
+                        <degree>2</degree>
+                        <rules>
+                            <include>
+                                <li>Turn_Authorship_OptimistTraitRules</li>
+                            </include>
+                        </rules>
+                    </li>
+                </rulesByDegree>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Greedy, Jealous -->
+    <RulePackDef>
+        <defName>Turn_Authorship_ConceitedTraitRules</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>topic->greed</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for more</li>
+                <li>topic->being greedy</li>
+
+                <li>detail->why [AUTHOR_pronoun] deserves to have more</li>
+                <li>detail->why [AUTHOR_pronoun] should be allowed to live [AUTHOR_possessive] best life</li>
+                <li>detail->the virtue of greed</li>
+                <li>detail->[bickering] about other [FACTION_pawnsPlural] who have things [AUTHOR_pronoun] wants</li>
+
+                <li>like->having more</li>
+                <li>like->wealth</li>
+                <li>like->acquisition</li>
+                <li>like->luxury</li>
+                <li>like->the finer things in life</li>
+
+                <li>dislike->sharing</li>
+                <li>dislike->doing with less</li>
+                <li>dislike->charity</li>
+
+                <li>risk->jealous looks</li>
+                <li>risk->insults from [AUTHOR_possessive] lessers</li>
+
+                <li>reward->luxury</li>
+                <li>reward->the good life</li>
+                <li>reward->wealth and status</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+
+    <RulePackDef>
+        <defName>Turn_Authorship_UnattractiveTraitRules</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>topic->[AUTHOR_possessive] unattractive qualities</li>
+                <li>topic->[AUTHOR_possessive] ugliness</li>
+                <li>topic->being unattractive</li>
+
+                <li>detail->how the other [FACTION_pawnsPlural] avoid [AUTHOR_objective]</li>
+                <li>detail->the [strife] of being ugly</li>
+                <li>detail->[AUTHOR_possessive] tragic appearance</li>
+
+                <li>risk->disguted looks</li>
+                <li>risk->social distance</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+
+    <!-- Wimp, Delicate -->
+    <RulePackDef>
+        <defName>Turn_Authorship_WimpyTraitRules</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>topic->wimping out</li>
+                <li>topic->[AUTHOR_possessive] wimpiness</li>
+                <li>topic->being a wimp</li>
+
+                <li>detail->the many dangers of [LOCATION_planetName]</li>
+                <li>detail->[bickering] about how harsh life on the Rim is</li>
+                <li>detail->how the other [FACTION_pawnsPlural] pick on [AUTHOR_objective]</li>
+
+                <li>like->safety</li>
+                <li>like->comfort</li>
+
+                <li>dislike->pain</li>
+                <li>dislike->injury</li>
+                <li>dislike->suffering</li>
+                <li>dislike->misery</li>
+
+                <li>risk->being treated like a wimp</li>
+                <li>risk->giving up</li>
+                <li>risk->giving in to pain</li>
+                <li>risk->coming across as spineless</li>
+
+                <li>reward->safety</li>
+                <li>reward->living another day</li>
+                <li>reward->avoiding conflict</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+
+    <!-- Chemical Interest, Chemical Fascination -->
+    <RulePackDef>
+        <defName>Turn_Authorship_DrugDesireTraitRules</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>topic->drugs</li>
+                <li>topic->[AUTHOR_possessive] [inclination] for drugs</li>
+                <li>topic->being a druggie</li>
+
+                <li>detail->the most beneficial types of drugs</li>
+                <li>detail->expanding [AUTHOR_possessive] mind</li>
+                <li>detail->the benefits of a drug-positive lifestyle</li>
+
+                <li>like->drugs</li>
+                <li>like->getting high</li>
+                <li>like->mind-altering chemicals</li>
+
+                <li>dislike->sobriety</li>
+
+                <li>risk->overdosing</li>
+                <li>risk->addiction</li>
+                <li>risk->the cost of drugs</li>
+
+                <li>reward->chemical bliss</li>
+                <li>reward->a good rush</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+
+    <!-- Pessimist, Depressive -->
+    <RulePackDef>
+        <defName>Turn_Authorship_PessimistTraitRules</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>topic->negativity</li>
+                <li>topic->[AUTHOR_possessive] negative outlook</li>
+                <li>topic->being negative</li>
+
+                <li>detail->why life is so miserable</li>
+                <li>detail->how horrible everything is</li>
+                <li>detail->how [adjective_evil] life is on [LOCATION_planetName]</li>
+
+                <li>like->stress</li>
+                <li>like->being miserable</li>
+                <li>like->worrying about everything</li>
+
+                <li>dislike->life</li>
+                <li>dislike->being happy</li>
+                <li>dislike->looking on the bright side</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+
+    <!-- Optimist, Sanguine -->
+    <RulePackDef>
+        <defName>Turn_Authorship_OptimistTraitRules</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>topic->positivity</li>
+                <li>topic->[AUTHOR_possessive] positive outlook</li>
+                <li>topic->being positive</li>
+
+                <li>detail->why life is so great</li>
+                <li>detail->how wonderful everything is</li>
+                <li>detail->how [adjective_friendly] life is on [LOCATION_planetName]</li>
+
+                <li>like->life</li>
+                <li>like->being happy</li>
+                <li>like->looking on the bright side</li>
+
+                <li>dislike->stress</li>
+                <li>dislike->being miserable</li>
+                <li>dislike->worrying about everything</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+</Defs>

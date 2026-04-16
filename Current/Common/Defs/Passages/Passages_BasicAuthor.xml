@@ -78,4 +78,18 @@
         </rules>
     </InspiredAuthorship.Passages.PassageDef>
 
+
+    <!-- Author's traits -->
+    <InspiredAuthorship.Passages.PassageDef>
+        <defName>AuthorTrait</defName>
+        <workerClass>InspiredAuthorship.Passages.PassageWorker_AuthorTrait</workerClass>
+        <rules>
+            <rulesStrings>
+                <li>topic(p=0.1)->[AUTHOR_possessive] personality</li>
+                <li>topic(p=0.1)->[AUTHOR_possessive] traits</li>
+                <li>topic(p=0.1)->[AUTHOR_possessive] preferences</li>
+            </rulesStrings>
+        </rules>
+    </InspiredAuthorship.Passages.PassageDef>
+
 </Defs>
