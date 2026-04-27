@@ -19,22 +19,21 @@ namespace InspiredAuthorship.Passages
             return count;
         }
         
-        public static GrammarRequest GetRandomGrammarFor(Pawn author, IEnumerable<PassageDef> exhaustedDefs, out PassageDef usedDef)
+        public static GrammarRequest GetRandomGrammarFor(Pawn author, IEnumerable<PassageDef> usedDefs, out PassageDef usedDef, bool useContext = false)
         {
-            
             usedDef = DefDatabase<PassageDef>.AllDefsListForReading.RandomElementByWeight(
-                d => !exhaustedDefs.Contains(d) && d.Worker.CanUseFor(author)
+                d => usedDefs.Count(ud => ud == d) < d.maxUses && d.Worker.CanUseFor(author)
                     ? d.Worker.CommonalityFor(author)
                     : 0.0f);
             
-            return GetGrammarFromPassage(author, usedDef);
+            return GetGrammarFromPassage(author, usedDef, useContext);
         }
 
-        public static GrammarRequest GetGrammarFromPassage(Pawn author, PassageDef passageDef)
+        public static GrammarRequest GetGrammarFromPassage(Pawn author, PassageDef passageDef, bool useContext = false)
         {
             GrammarRequest request = new GrammarRequest();
             
-            foreach(Rule rule in passageDef.Worker.GetRules(author, request))
+            foreach(Rule rule in passageDef.Worker.GetRules(author, request, useContext))
                 request.Rules.Add(rule);
             
             foreach (Rule rule in passageDef.rules.Rules)

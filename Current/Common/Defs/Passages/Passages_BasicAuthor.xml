@@ -82,6 +82,7 @@
     <!-- Author's traits -->
     <InspiredAuthorship.Passages.PassageDef>
         <defName>AuthorTrait</defName>
+        <maxUses>2</maxUses>
         <workerClass>InspiredAuthorship.Passages.PassageWorker_AuthorTrait</workerClass>
         <rules>
             <rulesStrings>

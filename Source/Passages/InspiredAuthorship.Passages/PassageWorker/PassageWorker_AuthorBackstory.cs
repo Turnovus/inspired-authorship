@@ -6,9 +6,9 @@ namespace InspiredAuthorship.Passages
 {
     public class PassageWorker_AuthorBackstory : PassageWorker
     {
-        public override IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request)
+        public override IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request, bool useContext=false)
         {
-            foreach (Rule rule in base.GetRules(author, request))
+            foreach (Rule rule in base.GetRules(author, request, useContext))
                 yield return rule;
 
             yield return new Rule_String("AUTHOR_childhood", author.story.Childhood.title);

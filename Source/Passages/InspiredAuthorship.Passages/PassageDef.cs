@@ -9,6 +9,7 @@ namespace InspiredAuthorship.Passages
     public class PassageDef : Def
     {
         public float baseCommonality = 1.0f;
+        public int maxUses = 1;
 
         public Type workerClass = typeof(PassageWorker);
 

@@ -7,6 +7,8 @@ namespace InspiredAuthorship.Passages
 {
     public class PassageWorker_AuthorTrait : PassageWorker
     {
+        private List<TraitDef> contextUsedTraits = new List<TraitDef>();
+        
         private static RulePack RulesFor(TraitDef traitDef, int degree)
         {
             ModExtension_TraitRules extension = traitDef.GetModExtension<ModExtension_TraitRules>();
@@ -17,6 +19,9 @@ namespace InspiredAuthorship.Passages
                     return degreeRules.rules;
             return null;
         }
+
+        private bool CanUseTrait(Trait trait) =>
+            !trait.Suppressed && !contextUsedTraits.Contains(trait.def) && RulesFor(trait.def, trait.Degree) != null;
         
         protected override bool CanUseForInt(Pawn author)
         {
@@ -24,30 +29,31 @@ namespace InspiredAuthorship.Passages
                 return false;
 
             foreach (Trait trait in author.story.traits.allTraits)
-                if (!trait.Suppressed && RulesFor(trait.def, trait.Degree) != null)
+                if (CanUseTrait(trait))
                     return true;
 
             return false;
         }
 
-        public override IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request)
+        public override IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request, bool useContext=false)
         {
-            foreach (Rule rule in base.GetRules(author, request))
+            foreach (Rule rule in base.GetRules(author, request, useContext))
                 yield return rule;
 
-            List<RulePack> rulePacks = new List<RulePack>();
+            List<Trait> usableTraits = new List<Trait>();
             foreach (Trait trait in author.story.traits.allTraits)
-            {
-                if (trait.Suppressed)
-                    continue;
-                RulePack rulePack = RulesFor(trait.def, trait.Degree);
-                if (rulePack != null)
-                    rulePacks.Add(rulePack);
-            }
+                if (CanUseTrait(trait))
+                    usableTraits.Add(trait);
 
-            RulePack randomPack = rulePacks.RandomElement();
+            Trait randomTrait = usableTraits.RandomElement();
+            RulePack randomPack = RulesFor(randomTrait.def, randomTrait.Degree);
             foreach (Rule rule in randomPack.Rules)
                 yield return rule;
+            
+            if (useContext)
+                contextUsedTraits.Add(randomTrait.def);
         }
+
+        public override void Notify_GenerationFinished() => contextUsedTraits.Clear();
     }
 }

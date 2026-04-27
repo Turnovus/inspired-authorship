@@ -110,9 +110,20 @@ namespace InspiredAuthorship
             GrammarRequest request = GetRequestFor(author);
             
             request.Includes.Add(MyDefOf.ModTuning.writtenBookDescriberNew);
-            passages = GenerateBookPassages(author);
-            request.Rules.Add(new Rule_String("passages", passages));
-            
+
+            passages = "ERR";
+            // Use a try/finally so that passage worker contexts are not contaminated by failures from exceptions
+            try
+            {
+                passages = GenerateBookPassages(author);
+                request.Rules.Add(new Rule_String("passages", passages));
+            }
+            finally
+            {
+                foreach (PassageDef passageDef in DefDatabase<PassageDef>.AllDefsListForReading)
+                    passageDef.Worker.Notify_GenerationFinished();
+            }
+
             return GrammarResolver.Resolve("desc", request).StripTags();
         }
 
@@ -161,7 +172,7 @@ namespace InspiredAuthorship
                 for (int i = 0; i < maxPassages; i++)
                 {
                     GrammarRequest request =
-                        PassageGenerator.GetRandomGrammarFor(author, usedPassages, out PassageDef passage);
+                        PassageGenerator.GetRandomGrammarFor(author, usedPassages, out PassageDef passage, true);
 
                     int numRules = 0;
                     foreach (string rule in MyDefOf.ModTuning.passageRules)

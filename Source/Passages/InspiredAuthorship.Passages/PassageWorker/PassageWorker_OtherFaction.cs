@@ -8,15 +8,20 @@ namespace InspiredAuthorship.Passages
 {
     public abstract class PassageWorker_OtherFaction : PassageWorker
     {
-        public abstract bool IsAcceptableFaction(Faction faction);
+        public List<FactionDef> contextUsedFactions = new List<FactionDef>();
         
-        protected override bool CanUseForInt(Pawn author) => AllFactions.Any(IsAcceptableFaction);
+        public abstract bool IsAcceptableFaction(Faction faction);
 
-        public override IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request)
+        private bool CanUseFaction(Faction faction) =>
+            faction.def != null && IsAcceptableFaction(faction) && !contextUsedFactions.Contains(faction.def);
+        
+        protected override bool CanUseForInt(Pawn author) => AllFactions.Any(CanUseFaction);
+
+        public override IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request, bool useContext=false)
         {
-            foreach (Rule rule in base.GetRules(author, request)) yield return rule;
+            foreach (Rule rule in base.GetRules(author, request, useContext)) yield return rule;
             
-            Faction faction = AllFactions.Where(IsAcceptableFaction).RandomElementWithFallback();
+            Faction faction = AllFactions.Where(CanUseFaction).RandomElementWithFallback();
             if (faction == null)
             {
                 Log.Error("Failed to find valid faction while generating {0}".Formatted(GetType().ToString()));
@@ -29,6 +34,9 @@ namespace InspiredAuthorship.Passages
             yield return new Rule_String("otherFaction_pawnsPlural", faction.def.pawnsPlural);
             if(faction.leader != null)
                 yield return new Rule_String("otherFaction_leader", faction.leader.Name.ToStringFull);
+            
+            if (useContext)
+                contextUsedFactions.Add(faction.def);
         }
 
         private IEnumerable<Faction> AllFactions => Find.FactionManager.GetFactions(allowNonHumanlike: false);

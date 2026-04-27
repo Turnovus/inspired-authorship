@@ -23,10 +23,12 @@ namespace InspiredAuthorship.Passages
 
         protected virtual bool CanUseForInt(Pawn author) => true;
 
-        public virtual IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request)
+        public virtual IEnumerable<Rule> GetRules(Pawn author, GrammarRequest request, bool useContext = false)
         {
             foreach (Rule rule in TaleData_Pawn.GenerateFrom(author).GetRules("AUTHOR", request.Constants))
                 yield return rule;
         }
+        
+        public virtual void Notify_GenerationFinished() {}
     }
 }
